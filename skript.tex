@@ -1,0 +1,176 @@
+\documentclass[a4paper, 11pt, twosite, german, titlepage]{scrartcl}
+
+%TODO doku
+% German Support
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Math stuff
+\usepackage{amsmath}
+% style
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+\usepackage[margin=2.5cm]{geometry}
+% graphics
+\usepackage{pgf, tikz}
+\usetikzlibrary{decorations.pathreplacing, shapes}
+
+%TODO Komaskript benutzen
+% pagestyle: header...
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{%
+\markboth {#1}{}}
+\fancyhead[L]{Mathe II SoSe14} 
+\fancyhead[R]{\leftmark}	
+
+
+%forall, exists, sum
+\let\oldforall\forall
+\renewcommand{\forall}{\hspace{3pt}\oldforall}
+\let\oldexists\exists
+\renewcommand{\exists}{\hspace{3pt}\oldexists}
+\let\oldsum\sum
+\renewcommand{\sum}{\oldsum\limits}
+% Zahlbereiche
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\C}{\mathbb{C}}
+% Zeichen
+\newcommand{\gdw}{\Leftrightarrow} %iff (genau dann wenn)
+\newcommand{\vnull}{\mathcal{O}} %Nullvektor
+%
+\newcommand{\ntoinf}{\stackrel{n \to \infty}{\longrightarrow}}
+\newcommand{\inflimn}{\lim\limits_{n \to \infty}}
+\newcommand{\inflimx}{\lim\limits_{x \to \infty}}
+% Abk.
+\newcommand{\without}[1]{\backslash \{#1\}} %Mengendifferenz
+\newcommand{\abs}[1]{\left|#1\right|} % Betrag
+\newcommand{\aset}[1]{\left\{#1\right\}} % Menge (grosse Klammern)
+% 
+\newcommand{\doubleunderline}[1]{\underline{\underline{#1}}}
+\newcommand{\emphh}[1]{\textbf{#1}}
+
+
+
+%TODO Default Argument ausschalten?
+% % Environments
+\newenvironment{definition}[1][]{
+ \label{def:#1}
+ \renewcommand{\labelenumi}{\roman{enumi})} %roemische Aufzaehlung  
+}
+% Definition 
+{  }
+% %
+% %
+\newenvironment{satz}[1][]{
+ \label{satz:#1}
+ \renewcommand{\labelenumi}{(\roman{enumi})} %roemische Aufzaehlung  
+}
+% Satz
+{   }
+% %
+% %
+\newenvironment{korollar}[1][]{
+ \label{koro:#1}
+ \renewcommand{\labelenumi}{(\roman{enumi})} %roemische Aufzaehlung  
+}
+% Korollar
+{   }
+% %
+% %
+\newenvironment{Beweis}[1][]{
+% \label{bew:#1}
+ \renewcommand{\labelenumi}{(\roman{enumi})} %roemische Aufzaehlung  
+}
+% Beweis
+{   }
+% %
+% %
+\newenvironment{beispiel}[1][]{
+% \label{bei:#1}
+ \renewcommand{\labelenumi}{\alph{enumi})} % Aufzaehlung mit Kleinbuchstaben
+}
+% Beispiel(e)
+{   }
+% %
+% %
+\newenvironment{bemerkung}[1][]{
+ \label{bem:#1}
+ \renewcommand{\labelenumi}{\alph{enumi})} % Aufzaehlung mit Kleinbuchstaben
+}
+% Bemerkung
+{   }
+
+
+
+
+
+
+	
+% Aufzaehlungsstandart		
+\renewcommand{\labelenumi}{\alph{enumi})}
+
+%TODO Titelseite
+\title{Mathematik II}
+
+% Dokumentinfo
+\usepackage[pdftex, pdftitle={Mathe 2 SoSe14 - ueberarbeitet}, pdfauthor={Felicia Saar}]{hyperref}
+\hypersetup{pdftitle={Mathematik 2}, pdfnewwindow, colorlinks, linkcolor=black}
+
+\begin{document}
+
+\maketitle
+%TODO Disclaimer
+\tableofcontents
+\newpage
+% muss hier zu Beginn stehen bleiben! Verhindert bei neuen Absaetzen das Einruecken
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+
+%Inhalt
+
+%ANALYSIS
+%TODO Part Style (Teil 1 wegkriegen)
+\part{Analysis}
+% Folgen und Reihen
+\input{folgenundreihen.tex}
+% Potenzreihen
+
+% Funktionen
+
+% Stetigkeit
+
+% Differenzierbare Funktionen
+
+% Integrationsrechnung
+
+
+%LINEARE ALGEBRA
+% Vektorraeume
+
+% Matrizen und LGS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
