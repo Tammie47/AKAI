@@ -54,55 +54,6 @@
 
 
 
-%TODO Default Argument ausschalten?
-% % Environments
-\newenvironment{definition}[1][]{
- \label{def:#1}
- \renewcommand{\labelenumi}{\roman{enumi})} %roemische Aufzaehlung  
-}
-% Definition 
-{  }
-% %
-% %
-\newenvironment{satz}[1][]{
- \label{satz:#1}
- \renewcommand{\labelenumi}{(\roman{enumi})} %roemische Aufzaehlung  
-}
-% Satz
-{   }
-% %
-% %
-\newenvironment{korollar}[1][]{
- \label{koro:#1}
- \renewcommand{\labelenumi}{(\roman{enumi})} %roemische Aufzaehlung  
-}
-% Korollar
-{   }
-% %
-% %
-\newenvironment{Beweis}[1][]{
-% \label{bew:#1}
- \renewcommand{\labelenumi}{(\roman{enumi})} %roemische Aufzaehlung  
-}
-% Beweis
-{   }
-% %
-% %
-\newenvironment{beispiel}[1][]{
-% \label{bei:#1}
- \renewcommand{\labelenumi}{\alph{enumi})} % Aufzaehlung mit Kleinbuchstaben
-}
-% Beispiel(e)
-{   }
-% %
-% %
-\newenvironment{bemerkung}[1][]{
- \label{bem:#1}
- \renewcommand{\labelenumi}{\alph{enumi})} % Aufzaehlung mit Kleinbuchstaben
-}
-% Bemerkung
-{   }
-
 
 
 
@@ -133,10 +84,8 @@
 %Inhalt
 
 %ANALYSIS
-%TODO Part Style (Teil 1 wegkriegen)
-\part{Analysis}
 % Folgen und Reihen
-\input{folgenundreihen.tex}
+\input{01lecture.tex}
 % Potenzreihen
 
 % Funktionen
