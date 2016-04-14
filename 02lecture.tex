@@ -1,0 +1,95 @@
+\subsection{Prinzip des doppelten Abzählens}
+\label{subsec:doppAbzaehlPrinzip}
+
+$A, B$ endliche Mengen.
+$S \subseteq A \times B$
+
+Für jedes $a \in A$ sei $n_a = \abs{\aset{b \in B : (a, b) \in S}}$
+\\Für jedes $b \in B$ sei $m_b = \abs{\aset{a \in A : (a, b) \in S}}$
+
+Dann \[ \sum_{a \in A}n_a = \sum_{b \in B} m_b = \abs{S} \]
+
+
+\subsubsection*{Speziell}
+
+Angenommen $n_a = n$ für alle $a \in A$ und $m_b = m$ für alle $b \in B$.
+%
+\[\abs{A}\cdot n = \abs{B} \cdot m \]
+
+\subsection[Beispiel : Handshaking-Lemma]{Beispiel}
+Gegeben endlicher Graph. 
+
+Graph $G$: Menge von Knoten (Ecken, \emph{vertex}), Menge von Kanten (\emph{edge}), jede Kante hat zwei Endknoten.
+%
+$G$ sei ohne Schleifen.
+
+Dann: Anzahl der Knoten, von denen eine ungerade Anzahl von Kanten ausgeht, ist gerade. (Handshaking - Lemma)
+
+$V=$ Menge der Knoten
+\\$E=$ Menge der Kanten
+\\$S \subseteq V \times E = \aset{(v, e), v \in V, e \in E, v \text{ ist Endknoten von } e}$
+\\$v \in V : n_v =$ Anzahl der Kanten, die von $v$ ausgehen ($n_v =$ Grad von $v$)
+
+\ref{subsec:doppAbzaehlPrinzip} : 
+$\abs{S} = \sum_{v\in V} n_v = \sum_{e \in E} 2 = 2 \abs{E}$
+
+$V = V_g \;\dot{\cup}\; V_u$,
+\\$v \in V_g \gdw n_v$ gerade,
+$v \in V_u \gdw n_v$ ungerade
+
+$\sum_{v\in V_u}n_v + \sum_{v \in V_g}n_v = 2 \cdot \abs{E} \Rightarrow \sum_{v \in V_u}n_v$ gerade Zahl
+$\Rightarrow \abs{V_u}$ ist gerade.
+
+\subsection{Schubfachprinzip}
+\label{subsec:schubfachprinzip}
+
+Werden $m$ Objekte auf $n$ ''Schubfächer'' verteilt, so enthält (mind.) ein Schubfach mindestens $\left\lceil\frac{m}{n}\right\rceil$ Objekte. ($\lceil x \rceil = $ kleinste ganze Zahl $\geq x$)
+
+\subsubsection*{Beweis}
+
+$\left\lceil \frac{m}{n} \right\rceil - 1 < \frac{m}{n}$.
+Angenommen Aussage ist falsch. D.h.. alle Schubfächer enthalten höchstens $\left\lceil \frac{m}{n} \right\rceil -1$ Objekte.
+
+$\Rightarrow m \leq n \cdot \left(\left\lceil \frac{m}{n} \right\rceil -1\right) < n \cdot \frac{m}{n} = m $ %TODO lightning
+
+
+\subsection{Beispiele} %TODO Titel
+
+\begin{enumerate}
+	\item Gegeben sein ein Quadrat der Seitenlänge 70cm. Kann man 50 Punkte so im Quadrat verteilen, dass je zwei Punkte mindestens Abstand von 15 cm haben?
+	
+	Zerlege das Quadrat in 49 Teilquadrate der Seitenlänge 10cm. Wenn man 50 Punkte im Quadrat verteilt, so enthält man nach \ref{subsec:schubfachprinzip} mindestens eines der kleinen Quadrate 2 Punkte.
+	Maximalabstand in kleinem Quadrat ist durch die Diagonale gegeben, beträgt $\approx 14.14$ cm $< 15$ cm.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
