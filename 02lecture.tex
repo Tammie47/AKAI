@@ -53,14 +53,60 @@ Angenommen Aussage ist falsch. D.h.. alle Schubfächer enthalten höchstens $\le
 $\Rightarrow m \leq n \cdot \left(\left\lceil \frac{m}{n} \right\rceil -1\right) < n \cdot \frac{m}{n} = m $ %TODO lightning
 
 
-\subsection{Beispiele} %TODO Titel
+\subsection[Beispiel: Anwendung Schubfachprinzip]{Beispiele} 
 
 \begin{enumerate}
 	\item Gegeben sein ein Quadrat der Seitenlänge 70cm. Kann man 50 Punkte so im Quadrat verteilen, dass je zwei Punkte mindestens Abstand von 15 cm haben?
 	
 	Zerlege das Quadrat in 49 Teilquadrate der Seitenlänge 10cm. Wenn man 50 Punkte im Quadrat verteilt, so enthält man nach \ref{subsec:schubfachprinzip} mindestens eines der kleinen Quadrate 2 Punkte.
 	Maximalabstand in kleinem Quadrat ist durch die Diagonale gegeben, beträgt $\approx 14.14$ cm $< 15$ cm.
+	
+	\item
+	Gegeben 6 Punkte in der Ebene, keine 3 auf einer Geraden. Je 2 Punkte durch Kante verbinden (vollst. Graph)
+	
+	Färbe Kanten in jeweils einer von 2 Farben (rot, grün).
+	Dann gibt es ein einfarbiges Dreieck. 
+	
+	Gegeben sei irgendeine Färbung. Von den von einem Knoten $P$ ausgehenden 5 Kanten haben mindestens 3 die gleiche Farbe (\ref{subsec:schubfachprinzip}).
+	
+	Angenommen rote Kanten : $PQ, PR, PS$
+	
+	Falls $QR$ rot, so $PQR$ rotes Dreieck. O.B.d.A $QR$ grün.
+	
+	Analog: $QS$ und $RS$ o.B.d.A grün. Dann $QRS$ grün.
+	
+	\textbf{Spezialfall des Satzes von Ramsey (1930)}.
+	
+	Gegeben vollständiger Graph $G$ (alle Knoten sind durch Kanten verbunden).
+	Färbe Knoten mit $f$ Farben. Wähle $r \in \N$
+	
+	Ist die Anzahl der Knoten von $G$ genügend groß, so existieren $r$ Knoten in $G$, so dass alle Kanten zwischen diesen $r$ Knoten die gleiche Farbei haben.
+	(oben: $f=2, r=3$).
+	
+	(Beweis: Diekert, Kufsteiner, Rosenberger, Bd.1, Satz 6.29)
+	
+	
 \end{enumerate}
+
+
+\subsection*{Elementare Abzählprobleme (Mathe I)}
+
+$n, k \in \N_0$
+
+$[n]_0 := 1; k \geq 1: [n]_k := n \cdot (n-1) \cdot \dots \cdot (n-k + 1)$.
+Für $k > n$ ist $[n]_k=0$
+
+$[n]_n = n \cdot (n-1) \cdot 2 \cdot 1 = n!$ ($n$ Fakultät)
+
+$\binom{n}{k} = \begin{cases}
+	0 & k > n \\
+	\frac{n!}{k!(n-k)!} & k \leq n
+\end{cases} \;\;= \frac{[n]_k}{k!}$ Binomialkoeffizient.
+
+$\binom{n}{k} = \binom{n}{n-k}$, $n, k \geq 1 : \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$
+
+$(a+b)^n = \sum_{k=0}^{n}\binom{n}{k}a^kb^{n-k} $ Binomialsatz.
+\; Für $a=b=1$ : $ 2^n = \sum_{k=0}^{n}\binom{n}{k}  $ 
 
 
 
