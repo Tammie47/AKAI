@@ -1,0 +1,82 @@
+\subsection{Satz}
+\begin{enumerate}
+\item $k,n \in \N_0$
+
+Anzahl der Möglichkeiten aus einer Menge mit n Elementen \textit{k} Elemente auszuwählen ist:
+
+
+\begin{tabular}{c|c|c}
+	$k$ aus $n$ & ohne Berücksichtigung der Anordnung & mit Berücksichtigung der Anordnung\\ \hline
+	ohne Wdhl. & $\binom{n}{k}$ & $[n]_k$\\ \hline
+	mit Wdhl. & $\binom{n+k-1}{k} $& $n^k$
+\end{tabular}
+
+
+\item $k,n \in \N$
+
+Anzahl der geordneten n-Tupel$(x_1,...,x_n)$
+
+$x_i\in \N_0,$ mit $\sum_{i=1}^{n} = k$ ist $\binom{n+k-1}{k}$
+
+\item $k,n \in \N$
+
+Wie b), aber $x_i \in \N$; Anzahl ist $\binom{k-1}{n-1}$
+
+$ \Biggl( \sum_{i=1}^{n}(x_i-1)=k-n$ \quad Nach b): Anzahl $\binom{n+(k-n)-1}{k-n} = \binom{k-1}{k-n}=\binom{k-1}{k-1-(k-n)} = \binom{k-1}{n-1} \Biggr) $ 
+\item Nach a): Anzahl der k-elementigen Teilmengen einer Menge mit \textit{n} Elementen ist $\binom{n}{k.}$
+
+Anzahl aller Teilmengen einer Menge mit n Elementen:
+$$ \sum_{k=0}^{n}\binom{n}{k}= (1+1)^n = 2^n$$ (Mathe I)
+\end{enumerate}
+
+\subsection{Beispiel}
+%TODO Add Felis tex
+
+\subsection{Satz}
+Anzahl der Möglichkeiten k identische/unterschiedliche Objekte auf \textit{n} identische/unterschiedl. Kisten zu verteilen (Kisten dürfen leer bleiben):
+
+\begin{tabular}{c|c|c}
+	& \textit{n} ident. Kisten & \textit{n} untersch. Kisten \\ \hline
+	\textit{k} ident. Obj. &$p_n(k)$ &$\binom{n+k-1}{k})$ \\ \hline
+	\textit{k} untersch. Obj. & $\sum_{i=1}^{n} S(k,i)$&$n^k$ 
+\end{tabular}
+
+\subsection{Definition}
+\begin{enumerate}
+	\item \textit{A} Menge. \underline{Partition} von \textit{A}: $\{ A_1,...,A_r \},~ A_i \subseteq A~ A_i\cap A_j = \emptyset$ für $i\neq j$ und $A = A_1 \cup ... \cup A_r$ 
+	\subsubsection*{Beispiel:}
+	$\abs{A}= 4$, $r=2$
+	
+	$\{\{1\}, \{2,3,4\}\},~ \{\{2\}, \{1,3,4\}\}~ \{\{3\}, \{1,2,4\}~ \{\{4\}, \{1,2,3\}\}\}$
+	$\{\{1,2\}, \{3,4\}\},~\{\{1,3\}, \{2,4\}\},~\{\{1,4\}, \{2,3\}\}$ 7 Partitionen in zwei Teilmengen.
+	
+	\item Anzahl aller Partitionen einer Menge mit \textit{k} Elementen in r Teilmengen = 
+	
+	$$S(k,r)$$
+	\begin{center}
+	(Stirlingzahl 2.Art) \qquad \qquad  (James Stirling, 1692-1770)
+	\end{center}
+	
+	\item Anzahl aller Partitionen einer Menge mit \textit{k} Elementen:
+	
+	$$ B_k = \sum_{i=1}^{k} S(k,i) \qquad \underline{Bell-Zahlen}$$
+	\begin{center}
+		(E.T.Bell,1883-1960)
+	\end{center}
+	
+	\item $P_t(k) = $ Anzahl der Zerlegungen von $k\in \N_0$ in r Summanden aus $\N_0$ ohne Berücksichtgung der Reihenfolge der Summanden.
+	
+	$=\abs{\{(x_1,...,x_r): x_i \in \N_0, x_1 \geq x_2 \geq ... \geq x_r, \sum_{i=1}^{r} x_i=k\}} $
+	
+	\begin{tabular}{c c c c c}
+	\underline{\textbf{Partitionszahlen Beispiel:}}	&	$P_2(4)=3$:& 4+0 & $P_3(4)=4$	& 4+0+0 \\
+												 	&  			& 3+1    &				& 3+1+0 \\
+													&   		& 2+2 	 & 				& 2+2+0 \\ 
+													& 			&		 &				& 2+1+1 \\
+	\end{tabular}
+
+
+\end{enumerate}
+
+\subsection*{Beweis 1.11}
+%TODO Add Felis tex
