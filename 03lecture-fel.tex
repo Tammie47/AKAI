@@ -1,0 +1,103 @@
+
+\subsection{Satz} %1.9
+
+\subsection{Beispiele}
+
+\begin{enumerate}
+	\item
+	52 Karten, je 13 von Karo, Herz, Pik, Kreuz.
+	Wie groß ist die Wahrscheinlichkeit 5 Karten von einer der vier Sorten zu bekommen?
+	
+	$\frac{\text{Anzahl der günstigen Fälle}}{\text{Anzahl aller Fälle}}
+	= \frac{4 \cdot \binom{13}{5}}{\binom{52}{5}}
+	\approx 0.00198$
+	
+	\item 
+	Wahrscheinlichkeit, genau 3 Asse zu bekommen (bei 5 Karten):
+	
+	$\frac{\binom{4}{3} \cdot \binom{48}{2}}{\binom{52}{5}} \approx 0.001736$
+	
+	\item
+	Wahrscheinlichkeit mind. 3 Asse zu erhalten:
+	
+	$\frac{\binom{4}{3} \cdot \binom{48}{2} + 48}{\binom{52}{5}} \approx 0.001755$
+	
+	\item Wie viele Möglichkeiten gibt es 12 identische Kugeln in 8 unterschiedliche Kisten zu verteilen (Kisten dürfen leer bleiben)? 
+	
+	$x_i = $ Anzahl der Kugeln in Kiste $i$. $x_i \in \N_0$
+	
+	$\sum_{i=1}^{8}x_i = 12$. 1.9b %TODO ref
+	anwenden mit $n=8, k=12 $ :
+	$\binom{19}{12} = \binom{19}{7} = 50388$
+	
+	\item
+	Wie d) %TODO ref?
+	aber keine Kiste darf leer bleiben: 1.9.c; %TODO ref
+	$\binom{11}{7} = 330$
+	
+	
+\end{enumerate}
+
+\subsection{Satz} %1.11
+\subsection{Definition} %1.12
+
+\subsection*{Beweis von 1.11} %TODO ref
+
+\begin{enumerate}
+	\item
+	$k$ unterschiedliche Objekte, $n$ unterschiedliche Kisten. 
+	
+	Für jedes Objekt $n$ Möglichkeiten. Insgesamt $n^k$.
+	
+	\item
+	$k$ identische Objekte, $n$ unterschiedliche Kisten:
+	Wie in Beispiel 1.10.d), %TODO ref
+	(Anwendung von 1.9.a): %TODO ref
+	$\binom{n+k-1}{k}$	
+	
+	\item
+	$k$ unterschiedliche Objekte, $n$ identische Kisten 
+	
+	Anzahl = Anzahl aller $\underset{\text{Kisteninhalte}}{\text{Partitionen}}$ %TODO  aufräumen ;)
+	 einer Menge von $k$ Elementen in maximal $n$ Teilmengen
+	 $= \sum_{i=1}^nS(k, i)$
+	 
+	 \item
+	 $k$ identische Objekte, $n$ identische Kisten. 
+	 
+	 Verteilung ist bestimmt durch: eine Kiste enthält $x_1$ Objekte, eine Kiste enthält $x_2$ Objekte, \dots, eine $x_n$ Objekte.
+	 $\sum_{i=1}^{n}x_i=k, x_i \in \N_0$
+	 
+	 Anzahl: $P_n(k)$
+	  
+	 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
