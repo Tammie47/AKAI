@@ -1,0 +1,45 @@
+\subsection{Satz}%TODO Add Feli's Part
+\subsection{Satz}
+$\abs{A}=k, \abs{B}=n$
+
+Anzahl aller surjektiven Abb. $A \rightarrow B$ ist $\sum_{j=0}^{n-1}(-1)^j \binom{n}{j}(n-j^k)$
+
+\subsubsection*{Beweis:}
+Sei $B = \{b_1,...,b_n  \}$
+
+\textit{S} = Menge aller surj. Abb. $A \rightarrow B$,
+
+\textit{T} = Menge aller Abb.  $A \rightarrow B$,
+
+$T_i = \{\alpha: A \rightarrow B: b_i \notin \alpha (A)  \}, i=1,...n$
+
+Dann $S=T\backslash(T_1\cup ... \cup T_n)$
+
+$\abs{T} = n^k$. Zu berechnen: $\abs{T_1 \cup ... \cup T_n}$ Mit 1.3 %TODO ref
+
+$T_i$ besteht aus allen Abb. $A\rightarrow B\backslash\{b_i\}$
+
+$\abs{T_i} = \underbrace{=}_{a)} (n-1)$ mit $n= \binom{n}{1}$  Mögl. für i
+
+i<j: $\abs{T_i \cap T_j} = (n-2)^k$ mit $\binom{n}{2}$ Mögl. für i,j
+
+i<j<l: $\abs{T_i \cap T_j \cap T_kl} = (n-3)^k$ mit $\binom{n}{3}$ Mögl. für i,j,l
+
+$\abs{T_1 \cup ...\cup T_n} = \sum_{j=1}^{n}(-1)^{j+1} \sum_{1\leq i_1<...<i_j\leq n}\abs{T_{i_1}\cap ... \cap T_{i_j}} = \sum_{j=1}^{n}(-1)^{j+1} \binom{n}{j}(n-j)^k$
+
+$\abs{S}= \abs{T}-\abs{T_1 \cup ... \cup T_n}$
+
+$= n^k-\sum_{j=1}^{n}(-1)^{j+1}\binom{n}{j}(n-j)^{k}$
+
+$= n^k+\sum_{j=1}^{n}(-1)^{j}\binom{n}{j}(n-j)^{k}$
+
+$= \sum_{j=0}^{n-1}(-1)^{j}\binom{n}{j}(n-j)^{k}$
+
+\subsection{Korollar}%TODO Add Feli's Part
+\subsection{Korollar}
+\begin{enumerate}
+	\item $\sum_{j=0}^{n-1}(-1)^j\binom{n}{j}(n-j)^n = n!$
+	
+	\item Ist $n>k$, so ist $\sum_{j=0}^{n-1}(-1)^j\binom{n}{j}(n-j)^k=0$
+\end{enumerate}
+\subsection{Satz}%TODO Add Feli's Part
