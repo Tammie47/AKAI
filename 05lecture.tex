@@ -149,4 +149,22 @@ $x_1,...,x_d \in \R,$ so $(x_1+...+x_d)^n= \sum_{k_i \in \N}\binom{n}{k_1,k_2,..
 	 \qquad   \qquad \qquad  \qquad  \qquad \qquad \qquad zur Gesamtlösung.
 	 
 	 
+	 \item Bubble Sort
+	 
+	 Geg. Liste $(a_1, a_2, \dots, a_n)$ mit $n$ Elementen. Elemente seien paarweise vergleichbar bzgl $\leq$
+	 Sortiere in absteigender Reihenfolge.
+	 
+	 Vergleiche $a_1, a_2$. Wenn $a_1 \geq a_2$ o.k. Wenn $a_1 \leq a_2$, so vertausche $a_1, a_2$.
+	 
+	 Fahre mit (dem neuen) $a_2$ fort. 
+	% 
+	 Am Ende steht das kleinste Element an der Stelle $n$. 
+	 %
+	 Rekursiv die ersten $n-1$ Elemente sortieren.
+	 
+	 Anzahl der Vergleiche : $V(n) = V(n-1) + \underbrace{(n-1)}_{g(n)}$
+	 
+	 lineare Rekursion der Ordnung 1, inhomogen, $g(n)$ ist nicht konstant.  
+	 
+	 
 \end{enumerate}

@@ -1,0 +1,104 @@
+$K = \R, \C$.
+\\ geg. lineare Rekursion mit konstanten Koeffizienten der Ordnung $k$:
+\[x_n = c_1x_{n-1} + \dots + c_kx_{n-k} + g(n)\] für alle $n \geq k +1$
+
+Zu gegebenen Anfangswerten $(a_1, \dots, a_k) \in K^k$  existiert genau eine Lösung $(x_1, x_2, \dots) \in k^{\N}$ (= Menge aller unendlichen Folgen mit Einträgen aus $K$) mit $x_i = a_i$ für $1 \leq i \leq k$
+
+$l : \begin{cases}
+(a_1, \dots, a_k) \mapsto l(a) = \text{ Lösung mit Anfangswert } a_1, \dots, a_k \\ K1 k \to K^{\N}
+\end{cases}$
+
+\subsubsection*{Beispiel}
+
+$x_n = 2x_{n-1} + 3x_{n-3}$, Ordnung 3, $(c_1 = 2, c_2 = 0, c_3 = 3)$
+
+z.B. Anfangswerte $a=(0, 1, 2)$.
+\\ $l(a) = (0, 1, 2, 4, 11, 28, 68, \dots)$
+
+\subsection{Satz} %2.3
+%TODO Thomas
+
+
+Wunsch : Bringe $A$ auf Diagonalgestalt (d.h. finde Basis von $K^k$ aus Eigenvektoren zu $\alpha$!)
+
+Bestimme Eigenwerte von $A$ (d.h. von $\alpha$). Charakteristisches Polynom $\det(t\cdot E_k - A)$ berechnen.
+
+$\det(t E_k - A) = \det \begin{pmatrix}
+t & -1 & & & &\\ 
+&  t &-1  & & &\\
+& & &\ddots  & & \\
+& & & & t & -1 & \\
+-c_k & -c_{k-1} & \cdot  && -c_2 & t -c_1 
+\end{pmatrix}
+= \footnote{Entwicklung nach der 1. Spalte}
+\dots 
+= t^k - c_1t^{k-1} - \dots - c_{k-1}t -c_k$
+
+Eigenwerte von $A$ = Lösungen von
+\[ t^k - c_1t^{k-1} - \cdot - c_{k-1}t - c_k = 0 \]
+
+Sei $d$ eine Nullstelle des charakteristischen Polynoms, also Eigenwert von $A$.
+
+Sei $\sigma \neq v = \begin{pmatrix}
+v_1 \\ \vdots \\ v_k
+\end{pmatrix}$ ein zugehöriger Eigenvektor. 
+
+$\begin{pmatrix}
+v_2 \\ \vdots \\ c_1v_k + \dots + c_kv_1
+\end{pmatrix}
+= Av
+= dv
+= \begin{pmatrix}
+d \cdot v_1 \\ d \cdot v_2 \\ \vdots \\ d \cdot v_k
+\end{pmatrix}
+$\qquad
+$\begin{array}{l}
+v_2 = d \cdot v_1 \\
+v_3 = d^2 \cdot v_1 \\
+\vdots \\
+v_k = d^{k-1}v_1
+\end{array}$
+
+Durch $v_1$ ist $v$ eindeutig bestimmt. Eigenraum von $\alpha$ zu Eigenwert $d$ ist 1-dimensional. Setze $v_1 = 1$
+
+Eigenvektor zu $d$ : $v = \begin{pmatrix}
+1 \\ d \\ d^2 \\ \vdots \\ d^{k-1}
+\end{pmatrix}$
+
+$v^t = (1, d, d^2, \dots, d^{k-1})$
+\\$l(v^t) = (1, d, d^2, \dots, d^{k-1}, d^k, d^{k+1}, \dots) \in L$
+
+$\begin{pmatrix}
+v_{m-1} \\ \vdots \\ v_{m+k}
+\end{pmatrix}
+= A^m \begin{pmatrix}
+v_1 \\\vdots\\v_k
+\end{pmatrix}
+= A^m \begin{pmatrix}
+1 \\ d\\ \vdots \\d^{k-1}
+\end{pmatrix}
+= d^m \begin{pmatrix}
+1 \\ d \\\vdots \\d^{k-1}
+\end{pmatrix}
+= \begin{pmatrix}
+d^m \\ d^{m+1} \\\vdots \\d^{m+k-1}
+\end{pmatrix}
+$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
