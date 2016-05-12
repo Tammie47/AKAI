@@ -1,0 +1,212 @@
+$(R_k) x_m = c_1X_{n-1}+...+c_kx_{n-k}, n>k$
+
+Anfangswerte $a=(a_1,...,a_k) \rightarrow $ eind. Lösung $l(a)=(a_1,...,a_k,a_{k+1},...)$
+
+$$ a_n = f(n)?$$
+
+$(*)$  $t^k-c_1t^{k-1}-...-c_{k-1}t-c_k=0 $ Char. Gleichung
+
+Wenn d Lösung von $(*)$, so gilt:
+
+$(1,d,d^2,...,d^{n-1},...)$ Lösung der Rekursion.
+
+Wenn $(*)~k$ paarweise verschiedene Lösungen $d_1,...,d_k \in \mathbb{C}$ besitzt,dann  sind $(1,d_1,...,d_1^{k-1}) ,...,(1,d_k,...,d_k^{k-1})$ sind linear unabhängig.
+
+Also bilden $w_1=(1,d_1,d_1^2,...,\underbrace{d_1^{n-1}}_n,...),$
+
+\qquad\qquad\qquad\qquad\qquad\qquad.
+
+\qquad\qquad\qquad\qquad\qquad\qquad.
+
+\qquad\qquad\qquad\qquad\qquad\qquad.
+
+\qquad\qquad\quad$w_k=(1,d_k,d_k^2,...,\underbrace{d_k^{n-1}}_n,...),$ \qquad Basis des Lösungsraums von ($R_k$)
+
+Gegeben die Anfangswerte $a=(a_1,...,a_k)$ Zug. Lösung $l(a) = (a_1,...,a_k,...,a_n,...)$
+
+Es ex. $s_1,...,s_k \in \mathbb{C}$ mit $ l(a)= s_1w_1+...+s_kw_k$ \qquad Wie bestimmt man $s_1,...,s_k?$
+
+$(a_1,...,a_k)=(s_1,s_1d_1,s_1d_1^2,...)+...+(s_k,s_kd_k,s_kd_k^2,...)$
+
+\begin{tabular}{l l}
+	$\Rightarrow$ & $a_1 = s_1+s_2+...+s_k$\\
+	& $a_2 = s_1d_1+s_2d_2+...+s_kd_k$\\
+	&.\\
+	&.\\
+	&.\\
+	&$\underbrace{a_k}_{geg.} = s_1d_1^{k-1}+s_2d_2^{k-1}+...+s_kd_k^{k-1}$ 	
+\end{tabular}\qquad $s_i$ immer gegeben
+
+Löse dieses LGS nach $ s_1,...,s_k.$
+
+Dann: $a_n = s_1d_1^{n-1}+s_2d_2^{n-1}+...+s_kd_k^{n-1}$ für alle $n \in \N$ (geschl Form für $a_n$) 
+
+\subsection{Satz} % 2.4
+
+
+Gegeben $(R_h) : x_n = c_1x_{n-1} + \dots + c_kx_{n-k}$ für $n > k$
+
+\begin{enumerate}
+	\item Ist $d\in\C$ eine Lösung der charakteristischen Gleichung 
+	\[ (*) t^k - c_1t^{k-1} - \dots - c_{k-1}t - c_k = 0 \]
+	so ist $w = (1, d, d^2, \dots)$ Lösung von $(R_h)$
+	
+	\item
+	Besitzt (*) $k$ verschiedene Lösungen $d_1, \dots, d_k$, so bilden die $w_i = (1, d_i, d_i^2, \dots)$, $i = 1, \dots k$, Basis des Lösungsraums von $(R_h)$
+	
+	\item
+	Unter den Vor. in b) sei $a = (a_1, \dots, a_k) \in \C^k$ ein Vektor von Anfangswerten.
+	
+	Seien $s_1, \dots, s_k$
+ die Lösungen des LGS
+ 
+	$\begin{array}{lcl}
+	s_1 + \dots + s_k &=& a_1 \\
+	d_1s_1 + \dots + d_ks_k &=& a_2 \\
+	\vdots \\
+	d_1^{k-1}s_1 + \dots + d_k^{k-1}s_k &=& a_k
+	\end{array}$
+	
+	so ist $l(a) = (s_1 + \dots + s_k, s_1d_1 + \dots + s_kd_k, \dots, s_1d^{n-1} + \dots + s_kd_k^{n-1}, \dots)$
+
+	d.h. \[ a_n = s_1d_1^{n-1} + \dots + s_kd_k^{n-1} \text{ für alle } n \in \N \]
+	(\emph{geschlossene Form})
+	
+	
+\end{enumerate}
+
+\subsection{Beispiel} %2.5
+
+\begin{enumerate}
+	\item Fibonacci-Folge: 
+	$F_n = F_{n-1} + F_{n-2}, n \geq 3, F_1 = 1, F_2 = 2$ (2.2.a) %TODO ref
+	
+	Charakteristische Gleichung 
+	$t^2 - t - 1 = 0$
+	\\ Lösungen : $d_{1,2} = \frac{1 \pm \sqrt{5}}{2}$
+	
+	$s_1 + s_2 = 1$
+\\	$s_1\left(\frac{1 \pm \sqrt{5}}{2}\right) 
+	+ s_2\left(\frac{1 - \sqrt{5}}{2}\right) = 2$
+	
+	$s_1 = \frac{1}{\sqrt{5}}\left(\frac{3 + \sqrt{5}}{2}\right)
+	= \frac{1}{\sqrt{5}} \left( \frac{1 + \sqrt{5}}{2} \right)^2$
+	\\ 
+	$s_2= \frac{1}{\sqrt{5}} \left( \frac{-3 + \sqrt{5}}{2} \right) 
+	= \frac{1}{\sqrt{5}} \left( \frac{1 - \sqrt{5}}{2} \right)^2$
+	
+	$F_n = s_1d_1^{n-1} + s_2d_2^{n-1}$
+	%
+	\[ F_n = \frac{1}{\sqrt{5}}\left( \frac{1 + \sqrt{5}}{2} \right)^{n+1} + \frac{1}{\sqrt{5}}\left( \frac{1 - \sqrt{5}}{2} \right)^{n+1} \]
+	%
+	(Manchmal wird auch definiert:
+	$ F_n = \frac{1}{\sqrt{5}}\left( \frac{1 + \sqrt{5}}{2} \right)^n 
+	+ \frac{1}{\sqrt{5}}\left(\frac{1 - \sqrt{5}}{2}\right)^n
+	\\ F_1 = 1, F_2 = 1 $)
+	 
+	$\abs{\frac{1 - \sqrt{5}}{2}} < 1$, mit wachsendem $n$ geht $\frac{1}{\sqrt{5}}\left( \frac{1 - \sqrt{5}}{2} \right)^{n+1}$ gegen 0.
+	
+	Tatsächlich $F_n$ ist die nächste ganze Zahl zu $\frac{1}{\sqrt{5}}\left( \frac{1 + \sqrt{5}}{2} \right)^{n+1} \approx \frac{1}{\sqrt{5}}1.618^{n+1} $
+	
+	$\frac{1 + \sqrt{5}}{2}$ Zahl des goldenen Schnitts.
+	
+	$|---\underset{M}{-}---|--\underset{m}{-}--| \qquad \frac{M}{m} = \frac{M + m}{M} = \frac{1 + \sqrt{5}}{2}$
+	
+	
+	\item 
+	$x_n = 2x_{n-1} - x_{n-2} + 2x_{n-3}, n \geq 4, x_1 = 0, x_2 = 4, x_3 = 10 $
+
+	$t^3 - 2t^2  + t - 2 = 0$
+	\\ $d_1 = 2$
+	\\ $t^3 - 2t^2 + t - 2 = (t-2)(t^2+1)$
+	\\ $d_2 = i$, $d_3 = -i$
+	
+
+	$s_1 + s_2 + s_3 = 0$
+	\\$2s_1 + is_2 - is_3 = 4$
+	\\$4s_1 -s_2 -s_3 = 10$	
+	
+	$s_1 =2, s_2 = -1, s_3 = -1$
+	
+	$ x_n = 2 \cdot 2^{n-1} - i^{n-1} - (-i)^{n-1}
+	      = \begin{cases}
+	      2^n & n \text{ gerade} \\
+	      2^n - 2 & n \equiv 1  \;(\!\!\!\!\mod 4) \\
+	      2^n + 2 & n \equiv 3 \;(\!\!\!\!\mod 4)
+	      \end{cases} $
+	
+	 
+
+\end{enumerate}
+
+
+
+\subsection{Satz}%2.6
+Geg. $(R_k) x_n = c_ix_{n-1}+...+c_k*x_{n-k}, n>k.$ Seien $d_1,...,d_s$ die versch. Nullstellen der char. Gleichung $\underbrace{t^k-c_1t^{k-1}+...-c_{k-1}t-c_k}_{(t-d_1)^{m_1}...(t-d_s)^{m_s}}=0$, mit Vielfachheiten $m_1,...,m_s,m_1+...+m_s=k$ 
+
+\begin{tabular}{l l}
+	Dann bilden & $w_{1,1},...,w_{1,m}$\\
+	&$w_{2,1},...,w_{2,m}$\\
+	&.\\
+	&.\\
+	&.\\
+	&$w_{s,1},...,w_{s,m}$\\
+\end{tabular}
+
+eine Basis des Lösungsprogramms von $(R_n)$, wobei $w_{i,j}= (1,2^{j-1}d_i,3^{j-2}d_i^2,...,\underset{\underset{n}{\uparrow}}{n^{j-1}d_i^{n-1}},...)$
+
+für $i=1,...,s$
+
+\quad $j=1,...,m_i$
+
+Beweis: M.Aigner, Diskrete Mathematik, Viweg, 1999(Satz 3.1)
+
+
+\subsection{Beispiel} % 2.7
+
+$x_n = 3x_{n-2} -2x_{n-3}, n \geq 4, x_1 = 1, x_2 = 2, x_3 = 6$
+
+Charakteristische Gleichung $t^3-3t+2 = 0$, 
+\\ $d_1 = 1$ (2 mal), $m_1 =2$
+\\$t^3 -3t + 2 = (t-1)^2(t+2)$
+\\$d_2 =2$ (1 mal), $m_2 = 1$
+
+$w_{1,1} = (1, 1, 1, 1, \dots)$
+\\ $w_{1, 2} = (1, 2, 3, 4, \dots)$
+\\ $w_{2, 1} = (1, -2, 4, -8, \dots, (-2)^{n-1}, \dots)$
+
+$(x_1, x_2, x_3, \dots) = s_1w_{1, 1} + s_2w_{1, 2} + s_3w_{2,1}$
+
+$s_1 + s_2 + s_3 = 1$
+\\$s_1 + 2s_2 -2s_3 = 2$ 
+\\$s_1 + 3s_2 + 4s_3 = 6$
+
+Lösung: $s_1 = - \frac{4}{3}, s_2 = 2, s_3 = \frac{1}{3}$
+
+$x_n = -\frac{4}{3} + 2n + \frac{1}{3}(-2)^{n-1}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -16,8 +16,170 @@ z.B. Anfangswerte $a=(0, 1, 2)$.
 \\ $l(a) = (0, 1, 2, 4, 11, 28, 68, \dots)$
 
 \subsection{Satz} %2.3
-%TODO Thomas
+\begin{enumerate}
+	\item Geg. homogene lin. Rek mit konst.Koeff., Ordnung k
+	
+	($R_k) x_n=c_1x_{n-1}+...+c_kx_{n-k}$
+	
+	Die Lösungen von ($R_k$) bilden einen k-dim. Unterraum L von $K^{\N}, l:K^k \rightarrow L \subseteq K^{\N} $ Vektorraum-isom.(d.h. bijektive lin. Abb.)
+	
+	\item Inhom. lin. Rekursion
+	
+	$(R)x_n=c_1x_{n-1}+...+c_kx_{n-k}+g(n),~ n\geq k+1$
+	
+	Zugehörige hom. Rekursion sei: ($R_k)-g(n)=0$ setzen.
+	
+	Ist $b=(b_1,b_2,...)$ eine spezielle Lösung von (R), so ist die Menge aller Lösungen von (R) gegeben durch:
+	
+	$(b+L)=\{(b_1+y_1,b_2+y_2,...):(y_1,y_2) \in L \}$ \qquad L Lösungsraum der $(R_k)$
+	
+	[(R) in "unendlicher" Matrixform:
+	
+	$\begin{pmatrix}
+	-c_k & -c_{k-1} & ... & -c_1 & 1 & 0 &... & & \\
+	0&-c_k & -c_{k-1} & ... & -c_1 & 1 & 0 &... &\\
+	0&0&-c_k & -c_{k-1} & ... & -c_1 & 1 & 0 &... \\
+	&.&&.&&.&&.&\\
+	&.&&.&&.&&.&\\
+	&.&&.&&.&&.&\\
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1\\
+	x_2\\
+	x_3\\
+	.\\
+	.\\
+	.\\
+	\end{pmatrix} = 
+	\begin{pmatrix}
+	g(k+1)\\
+	g(k+2)\\
+	g(k+3)\\
+	.\\
+	.\\
+	.\\
+	\end{pmatrix}
+	\begin{matrix}
+	-c_kx_1-c_{k-1x_2}-...-c_1x_k+x_{k+1}= g(k+1)\\
+	.\\
+	.\\
+	.
+	\end{matrix}$
+	]
+\end{enumerate}
+\subsubsection*{Beweis}
+Wie für LGS ind er lin. Algebra.
 
+\begin{itemize}
+	\item[1.Ziel:] Finde geschlossene Form für die Lösungen von ($R_k$), d.h. $x_n=f(n)$
+	\item[2.Ziel:] Finde geschlossene Form für die Lösungen von (R) 
+\end{itemize}
+
+Wie kommt man zur geschlossenen Beschreibung der Lösungen in Lösungsraum L von ($R_n$)?
+
+Basis von L bestimmen. l bildet Basis von $k^l$ auf Basis von L ab.
+
+z.B. $l(e_1),...,l(e_k),$ wobei $e_1, ..., e_k$ kan. Basis von $K^k$
+
+$l(e_1)= (1*0*...*\underbrace{0}_k, \underbrace{c_k}_{k+1},\underbrace{c_1c_k}_{k+2}, \underbrace{c_1^2c_k+c_2c_k}_{k+3},...)$ sieht nicht schön aus!
+
+Wir suchen eine schönere Bassis von L!
+
+Beschreibung hom. lin. Rek. durch lin. Schieberegister:
+
+%TODO ADD REGISER GRAPHIC
+\fbox{$x_{n-1}$} $\rightarrow$ \fbox{$x_{n-2}$} $\rightarrow$ ... $\rightarrow$ \fbox{$x_{n-k}$} $\rightarrow$ \qquad \qquad Zeitpunkt $n-k$ (Zum Zeitpunkt 1: Anfangswerte in Regisern)
+
+Beschreibung des Überangs der Registerbelegung zum Zeitpunkt $n-k$ zum nächsten Zeitpunkt $n-k+1$ wird beschrieben durch llin. Abb.:
+
+$\alpha \begin{pmatrix}
+x_{n-k}\\
+.\\
+.\\
+.\\
+x_{n-1}
+\end{pmatrix}=
+\begin{pmatrix}
+x_{n-k+1}\\
+.\\
+.\\
+.\\
+x_{n-1}\\
+c_1x_{n-1}+...+c_kx_{n-k}
+\end{pmatrix}=
+~,~
+\alpha \underbrace{\begin{pmatrix}
+	x_{1}\\
+	.\\
+	.\\
+	.\\
+	x_{k}
+	\end{pmatrix}}_{Anfangsw}=~
+\begin{pmatrix}
+x_{2}\\
+.\\
+.\\
+.\\
+x_{k+1}
+\end{pmatrix}, \quad
+\alpha^2 \begin{pmatrix}
+x_{1}\\
+.\\
+.\\
+.\\
+x_{k}
+\end{pmatrix}
+\begin{pmatrix}
+x_{3}\\
+.\\
+.\\
+.\\
+x_{k+2}
+\end{pmatrix}, \quad
+\alpha^m \begin{pmatrix}
+x_{1}\\
+.\\
+.\\
+.\\
+x_{k}
+\end{pmatrix}
+\begin{pmatrix}
+x_{m+}\\
+.\\
+.\\
+.\\
+x_{m+k}
+\end{pmatrix}
+$
+
+$\mathcal{P}$ kan. Basis von $K^k$ \qquad Darstellungsmatrix $A_{\alpha}^{\mathcal{P}}$:
+
+$\begin{pmatrix}
+0\\.\\.\\0\\c_k
+\end{pmatrix}=
+\alpha\begin{pmatrix}
+1\\0\\.\\0
+\end{pmatrix},\alpha\begin{pmatrix}
+0\\1\\.\\0
+\end{pmatrix},...,
+\alpha\begin{pmatrix}
+0\\0\\.\\1
+\end{pmatrix}$
+
+$A_i=A_{\alpha}^\mathcal{B} = \begin{pmatrix}
+0&1&0&.&.&.&0\\
+0&0&1&.&.&.&0\\
+0&0&0&.&.&.&0\\
+.&.&.&.&.&.&.\\
+0&0&0&.&.&.&1\\
+c_k&c_{k-1}&c_{k-2}&.&.&.&c_1
+\end{pmatrix}\qquad \qquad 
+A\begin{pmatrix}
+x_1\\.\\.\\.\\x_k
+\end{pmatrix}=\begin{pmatrix}
+x_2\\x_3\\.\\.\\.\\x_k\\x_{k+1}
+\end{pmatrix} $ \qquad
+\fbox{$x_{k+1} = c_kx_1+...+c_1x_k$}
 
 Wunsch : Bringe $A$ auf Diagonalgestalt (d.h. finde Basis von $K^k$ aus Eigenvektoren zu $\alpha$!)
 
