@@ -1,0 +1,52 @@
+%TODO ADD FELI STUFF
+
+\subsection{Satz}
+$(R_k)$ wie oben, ebenso, $d_1,...,d_s, m_1,...,m_s.$
+
+Sei o.B.d.A. $d:= \abs{d_1}=...=\abs{d_r}>\abs{d_{r+1}}\geq...\geq \abs{d_s}$
+
+Sei $m = max\{m_1,...,m_r\}$
+
+Ist $(a_1,a_2,...) $ eine Lösung von $(R_k)$, so ist 
+
+$$ \abs{a_n} = \mathcal{O}(n^{m-1}*d^n)$$
+
+(D.h. es ex. Konstante $C>0$ mit $\abs{a_n} \leq C*n^{m-1}d^n$ für alle $n \geq 1)$
+
+\begin{tabular}{l l}
+\underline{Speziell:}& Ist d<1, si ist $\underset{n\leftarrow \infty}{lim} a_n = 0$\\
+& Ist d=1, so wächst $a_n$ höchstens polynomial\\
+& Ist d>1, so wächst $a_n$ höchstens exponentiell
+\end{tabular}
+
+Genaues Wachstum hängt von Anfangswerten ab.
+
+\underline{Ein Typ inhomogener lin.Rekursionen:}
+
+$(R) x_n = c_1x^{n-1}+...+c_kx^{n-k}+a*r^n$ \qquad für alle n>k
+
+$a,r$ Konstanen, $a\neq , \neq r$
+
+(Wichtiger Spezialfall: $r=1$)
+
+Lösungsmenge von $(R)$: Lösungsraum von zug. hom. Rek.$(R_k)$ + \underline{spez. Lösung von $(R)$}
+
+Ansatz für spez. Lösung: $(dr,dr^2,dr^3,..., \underset{ \underset{n} { \uparrow }}{dr^n},...) \qquad d \neq 0$
+
+\begin{tabular}{l l}
+$(dr,dr^2,...)$ ist Lösung &$\Leftrightarrow dr^n = c_1+d+r^{n-1}+...+c_k+d+r^{n-k}+ar^n \qquad \forall n> k$\\
+& $\Leftrightarrow \frac{(d-a)*r^n}{d}=c_1r^{n-1}+...+c_kr^{h-k} \qquad | :r^{n-k}$\\
+& $\Leftrightarrow r^k - \frac{a}{d}r^k=\frac{(d-a)}{d}r^k=c_1+r^{k-1}+...+c_{k-1}r+c_k$ \\
+& $\frac{a}{d} r^k = \underbrace{r^k-c_1r^{k-1}-...-c_{k-1}r-c_k}_{=:b}$
+\end{tabular}
+ 
+\subsection{Satz}
+Falls $b\neq 0$ (d.h. r ist keine Nullstelle der char. Gleichung), so setze
+
+$$ d:= \frac{a}{b}*r^k$$
+
+mit diesem d hat man spezielle Lösung $(dr,dr^2,...)$ von $(R)$
+
+
+\subsection{Beispiel} %TODO ADD FELI STUFF 2.10
+
