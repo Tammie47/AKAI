@@ -1,0 +1,105 @@
+\subsection*{Erinnerung} %TODO Einordnung. Im Skript von 2014 gehört der Teil zum nächsten Satz
+
+$(R_h)$ $x_n = c_1x_{n-1} + \dots + c_k x_{n-k}$, $n > k$
+\\ $ t^k -c_1t^{k-1} - \dots - t_k = 0 $ (*)
+
+$d_1, \dots, d_s$ verschiedene Nullstellen von (*)
+
+mit Vfh. $m_1, \dots, m_s$. $m_1 + \dots + m_s = k$
+
+Allgemeine Lösung : 
+\\$x_n = s_{1, 1}d_1^{n-1} + s_{1, 2}d_1^{n-1} + \dots + s_{1, m_1}n^{m_1-s}d^{n-1}
+\\ + \dots \dots
+\\ + s_{s,1}d_s^{n-1} + s_{s, 2}d_s^{n-1} + \dots + s_{s, m_s}n^{m_s-1}d_s^{n-1}
+$
+
+$s_{i, j}$ hängen von Anfangswerten ab.
+
+\subsection{Satz}
+$(R_k)$ wie oben, ebenso, $d_1,...,d_s, m_1,...,m_s.$
+
+Sei o.B.d.A. $d:= \abs{d_1}=...=\abs{d_r}>\abs{d_{r+1}}\geq...\geq \abs{d_s}$
+
+Sei $m = max\{m_1,...,m_r\}$
+
+Ist $(a_1,a_2,...) $ eine Lösung von $(R_k)$, so ist 
+
+$$ \abs{a_n} = \mathcal{O}(n^{m-1}*d^n)$$
+
+(D.h. es ex. Konstante $C>0$ mit $\abs{a_n} \leq C*n^{m-1}d^n$ für alle $n \geq 1)$
+
+\begin{tabular}{l l}
+\underline{Speziell:}& Ist d<1, si ist $\underset{n\leftarrow \infty}{lim} a_n = 0$\\
+& Ist d=1, so wächst $a_n$ höchstens polynomial\\
+& Ist d>1, so wächst $a_n$ höchstens exponentiell
+\end{tabular}
+
+Genaues Wachstum hängt von Anfangswerten ab.
+
+\underline{Ein Typ inhomogener lin.Rekursionen:}
+
+$(R) x_n = c_1x^{n-1}+...+c_kx^{n-k}+a*r^n$ \qquad für alle n>k
+
+$a,r$ Konstanen, $a\neq , \neq r$
+
+(Wichtiger Spezialfall: $r=1$)
+
+Lösungsmenge von $(R)$: Lösungsraum von zug. hom. Rek.$(R_k)$ + \underline{spez. Lösung von $(R)$}
+
+Ansatz für spez. Lösung: $(dr,dr^2,dr^3,..., \underset{ \underset{n} { \uparrow }}{dr^n},...) \qquad d \neq 0$
+
+\begin{tabular}{l l}
+$(dr,dr^2,...)$ ist Lösung &$\Leftrightarrow dr^n = c_1+d+r^{n-1}+...+c_k+d+r^{n-k}+ar^n \qquad \forall n> k$\\
+& $\Leftrightarrow \frac{(d-a)*r^n}{d}=c_1r^{n-1}+...+c_kr^{h-k} \qquad | :r^{n-k}$\\
+& $\Leftrightarrow r^k - \frac{a}{d}r^k=\frac{(d-a)}{d}r^k=c_1+r^{k-1}+...+c_{k-1}r+c_k$ \\
+& $\frac{a}{d} r^k = \underbrace{r^k-c_1r^{k-1}-...-c_{k-1}r-c_k}_{=:b}$
+\end{tabular}
+ 
+\subsection{Satz}
+Falls $b\neq 0$ (d.h. r ist keine Nullstelle der char. Gleichung), so setze
+
+$$ d:= \frac{a}{b}*r^k$$
+
+mit diesem d hat man spezielle Lösung $(dr,dr^2,...)$ von $(R)$
+
+
+\subsection{Beispiel : Türme von Hanoi (2.2.b)} %2.10 
+%TODO ref
+
+$a_n = 2a_{n-1} + 1$, $n \geq 2, a_1 = 1$
+
+Rekursion ist vom Typ 2.9: %TODO ref
+$a = 1, r = 1$
+
+Charakteristische Gleichung : $t-2 = 0$
+\\Allgemeine Lösung zur zugehörigen Rekursion $(R_h)$:
+$\aset{(s, s\cdot 2, s\cdot2^2, s \cdot2^3, \dots) | s \in \C}$
+
+Spezielle Lösung von $(R)$ nach 2.9. %TODO ref
+($r=1$ ist keine Nullstelle von charakteristischer Gleichung)
+\\ $b = -1, d = -1$
+\\ Spezielle Lösung : $(-1, -1, -1, -1, \dots)$
+
+Allgemeine Lösung der inhomogenen Rekursion: 
+\\$(s, s\cdot 2, s\cdot2^2, s\cdot2^3, \dots) + (-1, -1, -1, \dots)
+= (s-1, 2s-1, 2^2s-1, \dots, 2^{n-1}s-1, \dots)$
+
+Bestimme $s$ mit $s-1 = a_1 = 1$, $s=2$
+
+$(1, 3, 7, \dots)$ \qquad
+$a_n = 2^{n-1}\cdot2-1=2^n-1$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
