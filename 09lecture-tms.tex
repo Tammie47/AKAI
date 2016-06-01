@@ -1,0 +1,90 @@
+$x_n = c_1x_{n-1}+...+c_kx_{n-k}+ar^n, \quad a,r\neq 0 $
+
+Ist r keine Nullstelle von
+
+$t^k-c_1t^{k-1}-...-c_{k-1}t-c_k,$ so setze:
+
+$b:= r^k-c_1r1{k-1}-...-c_{k-1}r-c_k \neq 0,\quad d:=\frac{a}{b}*r^k$
+
+Spez. Lösung: $(dr,dr^2,dr^3,...)$
+
+Falls $r$ Nullstelle der char. Gleichung ist, so gibt es auch Formeln für spez. Lösung von (R)(Skript: Komb. Meth. i.d.Inform. 3.10)\\
+
+Falls $r$ einfache Nullstelle der char. Gl., so setzte $b=(k+1)r^k-kc_1r^{k-1}-...-2c_{k-1}r-c_k \neq 0$
+$d=\frac{a}{b} r^k, (dr,2dr^2,3dr^3,...,ndr^n,..)$ spez.Lösung von (R)
+
+\subsection{Beispiel}
+$a_n = 4a_{n-2}+3*2^n,\quad n\geq 3, a_1 =3, a_2 = 8 \enspace (k=2)$
+
+char. Gl.: $ t^2-4=(t-2)(t+2)$\qquad r = 2 ist einfache Nullstelle von $t^2-4$ 
+
+$b=3*2^2-4=8$
+
+$d=\frac{3}{8}2^2 0 \frac{3}{2}$
+
+Spez. Lösung: $(3,2*3*2,3*3*2^2,4*3*2^3,...,\underbrace{n*3*2^{n-1})}_n$
+
+Allg. Lösung der hom. Rek: $(s_1+s_2,s_1*2+s_2(-2),s_1*2^2+s_2(-2)^2,...),\qquad s_1,s_2 \in \C$
+
+Allg. Lösung der inhom. Rek: $(3+s_1+s_2,12+2s_1-2s_2,...,n*3*2^{n-1}+s_1*2^{n-1}+s_2(-2)^{n-1},...) \quad s_1,s_2 \in \C$
+
+$a_1 = 3 = 3+s_1 +s_2 \Rightarrow s_1 = -s_2$
+
+$a_2 = 8 = 12+2s_1-2s_2 \Rightarrow 8=12+4s_1 \Rightarrow s_1 = -1, s_2=1$
+
+$a_n = n*3*2^{n-1}-2^{n-1}+(-2)^{n-1} 0 \begin{cases}
+3n2n^{n-1} & \text{n ungerade}\\
+3n2^{n-1}-2^n = 2^{n-1}(3n-2) & \text{n gerade}
+\end{cases} \quad (a \in \R, l \in \N)$ 
+
+Formeln für spez. Lösungen ( Skript "Komb. Meth. i.d. Inform." ) Aufg.20 (l=1, k=1,2)
+
+\underline{Ziel:} Bestimme Wachstum von Rek.folgen vom Typ:
+
+- $x_n = ax_{n-1}+g(n)$
+- $x_n = ax_{\frac{n}{b}}+g(n)$ ($\frac{n}{b} \text{ steht für } \lceil \frac{n}{b}\rceil \text{ oder } \lfloor \frac{n}{b} \rfloor$),
+
+die bei Aufwandsabschätzung von \textbf{Divide-and-Conquer-Alg.} auftreten.
+
+\subsection{Satz} %TODO 2.12 Feli Part
+
+\subsection{Beispiel}%2.13
+
+$x_n = 2^{n-1}*x_{n-1}+2^{\frac{n(n-1)}{2}},, \quad a_1 =1$
+
+(lin. Rek. Ordg.1, keine konst. Koeff.)
+
+$f(n)=2^n, g(n) = 2^{\frac{n(n-1)}{2}} \qquad (g(1)=1)$
+
+$a_n = \sum_{i=1}^{n} 2^{\frac{i(i-1)}{2}} \prod_{j=i}^{n-1}2^j = \sum_{i=1}^{n}2^\frac{i(i-1)}{2}\frac{\prod_{j=1}^{n-1}2^j}{\prod_{j=1}^{i-1}2^j} = \sum_{i=1}^{n}2^{\frac{i(i-1)}{2}} \frac{2^{\frac{n(n-1)}{2}}}{2^{\frac{n(n-1)}{2}}}= n*2^{\frac{n(n-1)}{2}}$
+
+\subsection{Definition } %TODO 2.14 Feli Part
+
+\subsection{Satz (1.Mastertheorem)}
+
+Sei $(R) ~ x_n = ax_{n-1}+g(n) \quad \forall n \geq 2, a>1$.
+
+Gegeben sei Anfangswert $a_1 =: g(1)$ (Homogener Fall: $ g(n) = 0 \forall n \geq 2)$
+
+Sei $(a_1,a_2,...)$ Lösung von $(R)$ zum Anfangswert $a_1$
+
+
+\begin{enumerate}
+	\item Ist $(\abs{g(n)}) \in \mathcal{O}(a^{n(1-\epsilon)})$ für ein $ \epsilon > 0$, so ist $(\abs{a_n}) \in \mathcal{O}(a^n)$ 
+	
+	Ist überdies $g(n) \geq 0 \forall n, g\neq 0, so ist (a_n \in \Theta (a^n))$ \qquad (Es ist $a_n \geq 0 \forall n$)
+	
+	\item Ist $(\abs{g(n)}) \in \Theta(a^n),$ so ist $(\abs{a_n}) \in \mathcal{O}(n*a^n) $.
+	
+	Ist $g(n)\geq 0 \forall n,$ so ist $ (a_n) \in \Theta (n*a^n)$ 	\Big( Allgemeiner: $(\abs{g(n)}) \in \Theta(n^k(log(n))^l+a^n) \Rightarrow (\abs{a_n}) \in \mathcal{O}(n^{k+1}(log(n))^l*a^n)$
+	
+	Ist $g(n)\geq 0,$ so $(a_n) \in \Theta(n^{k+1}(log(n))^l*a^n)$\Big)
+	
+	\item Existerit $0<c<1, n_1 \in \N$ mit $0 < ag(n-1)\leq c+g(n)$ für alle $n \geq n_1,$ so ist $(a_n) \in \Theta(g(n)).$
+	
+	\Big[Im Fall c gilt (zur Vereinf. $n_1=1$): $g(n)\geq\frac{a}{c}\geq(\frac{a}{c})^{n-1}g(1) = (\frac{a}{c})^n * \frac{c}{a} * g(1)$
+	
+	$= a^n(1+\epsilon)\frac{c}{a}*g(1)$,
+	
+	wobei $\epsilon = - log_ac>0$.\qquad d.h. $(g(n)) \in \Omega(a^{n(1+\epsilon)})$\Big]  
+\end{enumerate}
