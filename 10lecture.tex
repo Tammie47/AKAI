@@ -1,0 +1,116 @@
+\subsection*{Satz}
+(R) $x_n = ax_{n-1}+g(n),\quad n \geq 2 a> 1, g(1) = a_1$
+
+Sei $(a_1,a_2,...)$ Lösung von (R) mit Anfangswert $a_1$
+
+\begin{enumerate}
+	\item Ist $(\abs{g(n)}) \in \mathcal{O}(a^{n(1-\epsilon)}) \text{ für ein } \epsilon > 0.$ so ist $(\abs{a_n})\in \mathcal{O}(a^n).$
+	
+	Ist überdies $g(n) \geq 0$ für alle $n, g \neq 0$, so ist $(a_n)\in \Theta(a^n)$ 
+	
+	\item Ist $(\abs{g(n)}) \in \Theta(a^n)$, so ist $(\abs{a_n})\in \mathcal{O}(n*a^n).$
+	
+	Ist außerdem $g(n) \geq 0$ für alle $n$,  so ist $(a_n) \in \Theta(n*a^n)$
+
+	\item Existieren $0 < c < 1$ und $n_0 \in \N \text{ mit } 0<ag(n-1)\leq cg(n)$ für alle $n\geq n_0$, so ist $(a_n) \in \Theta(g(n))$
+	
+	(In diesem Fall ist $(g(n))\in \Omega(a^{n(1+\epsilon)})$ für $\epsilon = -log_a(c) >0)$
+\end{enumerate}
+
+$x_n = f(n-1)x_{n-1}+g(n), n \geq 2, a_1 = g(1)$
+
+Lösung $(a_1,a_2,...):$ $a_n = \sum_{i=1}^{n}(g(i)\prod_{j=i}^{n-1}f(g))$
+
+\subsubsection*{Beweis:}
+\begin{enumerate}
+	\item Nach 2.12: $ a_n= \sum_{i=1}^{n}g(i)a^{n-1}$
+	
+	$\abs{g(n)}\leq C+ a^{n(-1-\epsilon)}$ für alle $n$ (o.B.d.A.)
+	
+	$\abs{a_n}\leq \sum_{i=1}^{n}\abs{g(i)}a^{n-i}\leq C \sum_{i=1}^{n}a^{i(1-\epsilon)}a^{n-i}$
+	
+	$ = C a^n \sum_{i=1}^{n}\underbrace{a^{-i\epsilon}}_{=(a^{(-\epsilon)^i})}$
+
+	$= C**a^n\frac{1-a^{-\epsilon(n+1)}}{1-a^{-\epsilon}} \underbrace{\leq}_{a>1,\epsilon>0} C*\frac{1}{1-a^{-\epsilon}}$
+
+	$ \Rightarrow (\abs{a_n})\in \mathcal{O}(a^n)$
+	
+	$\exists n_1: g(n_1)>0$
+	
+	$n\geq n_1: a_n= \sum_{i=1}^{n}g(i)a^{n-i} \geq a^{n-n_1} 0 \underbrace{\frac{g(n_1)}{a^{n_1}}}_{Konst.}*a^n$
+	
+	$\Rightarrow (a_n) \in \Omega(a^n)$
+	
+	$\Rightarrow (a_n)\in \Theta(a^n)$
+	
+	\item[b) c)] Skript 'Komb. Meth. i. d. Inf.
+	
+	\item[Beispiel zu b):] $x_nax_{n-1} + a^n, a_1=a$
+	
+	2.12: $ a_n = \sum_{i=1}^{n}a^ia^{n-i}=\sum_{i=1}^{n}a^n=n*a^n$
+	
+	$a_1 = a, \quad a_2 = a^2+a^2 = 2a^2, \quad a_3 = 2a^3+a^3,...$
+	
+\end{enumerate}
+
+\subsection{Bemerkung:}%2.16
+Divide-and-Conquer: $ T(n) = aT(n-1)+g(n)$
+
+\begin{tabular}{l l}
+	Komplexität $T(n)$ wird durch 	& die Teilprobl. bestimmt, falls $g(n) \in \mathcal{O}(a^{n(1-\epsilon)})$\\
+	---------''-----------			& $g(n)$ bestimmt, falls (i.W.) $g(n) \in \Omega (a^{n(1+\epsilon)})$
+\end{tabular}
+
+\subsection{Satz (2.Mastertheorem)}%2.17
+
+$a,b ßn \R,\quad a,b >1, \qquad \frac{n}{b}$ stehe für $\lfloor\frac{n}{b}\rfloor$ oder $\lceil \frac{n}{b}\rceil$
+
+Geg. Rekursion (R) $x(n) = a+x(\frac{n}{b}) + g(n), \text{ für } n \geq b$ (keine Rekursion fester Ordnung)
+
+$g(n)$ sei monoton wachsend, nicht-negativ, $g\neq 0,$ Geg. Anfangswerte: $a_i = g(i)$ für $i=1,...,\lceil b \rceil -1$
+
+Sei $(a_1,a_2,...)$ zugehörige Lösung von (R):
+\begin{enumerate}
+	\item Ist $(g(n)) \in \mathcal{O}(n^{log_b(a)-\epsilon})$ für ein $\epsilon >0$, so ist $(a_n) \in \Theta (n^{log_(a)})$
+	\item Ist $(g(n)) \in \Theta(n^{log_b(a)})$, so ist $(a_n) \in \Theta(log_b(n)*n^{log_b(a)})$
+	\item Existiert $0<c<1$ mit $a*g(\lceil\frac{n}{b}\rceil) \leq c*g(n)$  für alle $n\geq n_0$, so ist $(a_n \in \Theta(g(n)))$\quad$(\Rightarrow (g(n)) \in \Omega(n^{log_b(a)+\epsilon})$
+\end{enumerate}
+
+\underline{Beweisidee:} Ang. $b \in \N$ 
+
+Ist $n =b^m$ für ein $m \in \N$, so erhält man mit $x_m' := x(b^m)=x(n)$ \qquad $g'(m):= g(n)$
+
+so liefert (R): $x'm = a+x_{m-1} +g'(m)$ \qquad Form wie in 2.5
+$^m = a^{log_b(n)} = a^{log_a(n)*log_b(a)} = n^{log_b(a)}$
+
+Wenn man nur die Zahlen $n=b^m$ betrachtet, folgt 2.17 aus 2.15
+
+Allg. Fall für bel. n folgt dann aus der Monotonie von g.
+
+\underline{Wichtiger Fall:} $a=b>1$
+
+\begin{enumerate}
+	\item $(g(n)) \in \mathcal{O}(n^{1-\epsilon})$, so $(a_n) \in \Theta (n)$
+	\item $(g(n)) \in \mathcal{O}(n),$ so $ (a_n) \in \mathcal{O}(n*log(n))$ 
+\end{enumerate}
+
+\subsection{Beispiel}%2.18
+
+Mergesort: Liste \textit{L} mit n Elem. Zerlege \textit{L} in 2 gleiche große Teile $L_1, L_2$
+
+Wende $Merge \enspace s\cap t$ rekursiv auf $L_1,L_2$ an $\rightarrow$ Liefert sort. Liste $L_1', L_2'$
+
+Vergleiche die beiden Listen und sortiere. \quad Max. $n-1$ Vergleiche
+
+Aufwand: $V(n) = 2*V(\frac{n}{2})+g(n),\enspace g(n) \in \Theta (n) \underset{2.17}{\Rightarrow} (V(n)) \in \Theta(n lgo(n))$
+
+Vergleiche mit Bubble-Sort (2.2d)
+
+$V(n) = V(n) = V(n-1) + n-1$
+
+2.15 nicht anwendbar
+
+(Ü-Aufg.20: $(V(n)\in \Theta (n^2)$.)
+ 
+
+
