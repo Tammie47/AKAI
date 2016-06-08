@@ -1,0 +1,74 @@
+%TODO Thomas part
+
+\subsection{Beispiel} %TODO Thomas part 2.11
+
+\subsection{Satz} %2.12
+
+$x_n = f(n-1)x_{n-1} + g(n), \quad n \geq 2$. Gegeben sei Anfangswert $a_1 =: g(1)$
+
+Dann gilt für die zugehörige Lösung $ (a_1, a_2, \dots)$
+%
+\[ a_n = \sum_{i=1}^{n}\left(g(i)\cdot \prod_{j=i}^{n-1}f(j) \right) \] 
+(leeres Produkt = 1 (für $i=n$))
+
+\subsubsection*{Beweis}
+
+$n=1$: 
+$g(1)\cdot\underbrace{\prod_{j=1}^{0}f(j)}_{=1} = a_1$
+
+$f(n-1)a_{n-1} + g(n) = f(n-1) \cdot \left( \sum_{i=1}^{n-1}\left( g(i) \cdot \prod_{j=i}^{n-2}f(j) \right) \right) + g(n)
+	= \sum_{i=1}^{n-1}g(i)\prod_{j=i}^{n-1}f(j) + g(n)
+	= \sum_{i=1}^{n}g(i)\cdot\prod_{j=i}^{n-1}f(j) = a_n
+$
+
+\subsection{Beispiel} %2.13 
+%TODO Thomas
+
+\subsection{Definition} %2.14
+
+$(a_n)_{n \in \N}$ Folge von reellen Zahlen $a_n \geq 0 \forall n$
+
+\begin{itemize}
+	
+	\item $O(a_n) = \aset{(b_n) : b_n \geq 0 \forall n, \exists C > 0 : b_n \leq C \cdot a_n \text{ für alle } n \geq n_0,\: n_0 \text{ geeignet} }$
+	
+	\item
+	$\Omega(a_n) = \aset{ (c_n) : c_n \geq 0 \forall n, \exists  D>0 : c_n \geq D \cdot a_n \text{ für alle } n \geq n_0,\: n_0 \text{ geeignet}  }  $
+	
+	\item
+	$\Theta(a_n) = O(a_n) \cap \Omega(a_n)
+	\\ = \aset{(b_n) : b_n \geq 0 \forall n, \exists C, D>0 \text{ mit } D \cdot a_n \leq b_n \leq c \cdot a_n  \text{ für alle } n \geq n_1,\: n_1 \text{ geeignet}  }
+	$
+	
+	
+\end{itemize}
+
+Wichtige Beispiele
+
+\begin{itemize}
+	\item 	$(\log (n)) \in O(n^a)$ für alle $a > 0$ 
+	
+	\item $(n^a) \in O(b^n)$ für alle $a > 0, b > 1$
+	
+	\item $(n^2 + 7n + 44) \in O(n^2)$	
+\end{itemize}
+
+\subsection{Satz (1. Mastertheorem)} % 2.15
+%TODO Thomas part
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
