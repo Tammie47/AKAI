@@ -1,0 +1,74 @@
+\section{Part-Feli}
+\subsection{Part-Feli}
+\subsection{Part-Feli}
+\subsection{Part-Feli}
+\subsection{Part-Feli}
+\subsection{Satz}
+$A(M,\leq)$ ist abgeschlossen bzgl. Addition und Multiplikation von Funktionen die wie folgt definiert sind:
+
+$ f,g\in A(M,\leq)$
+
+$a,b \in M$:
+
+$(f+g)(a,b):= f(a,b)+g(a,b) \in \mathbb{C} \qquad ,f+g \in A(M,\leq)$
+	
+$(f*g)(a,b):= \sum_{c\in \mathbb{C}}f(a,b)*g(c,d) $\qquad (Faltungsprodukt)
+	 
+Ang. $ \nleq b$ Dann gilt für jedes $c \in M. a \nleq c$ oder $c\nleq b$ (Transitivität)
+	 
+$(f*g)(a,b)=0$, d.h. $f,g\in A(M,\leq)f(a,c)=0 $ der $g(c,d)=0$
+	 
+$(f*g)(a,b) = \sum_{c\in [a,b]}f(a,c)*g(c,b) \qquad(a \nleq b \Rightarrow [a,b] = \emptyset,$ leere Summe =0)
+
+Multiplikation entspricht der Matrixmultiplikation.
+
+Neutrales Element bzgl. Multiplikation: $\delta \in A(M,\leq)$
+
+$\delta(a,b)=\begin{cases}
+0 & a\neq b\\
+1 & a=b
+\end{cases}$ \qquad $\begin{pmatrix}
+	1 & & & & 0\\
+	  &. & & & \\
+	  & &. & & \\
+	  & & &. & \\
+	0 & & & &1 \\
+\end{pmatrix}
+$
+\subsection{Part-Feli}
+
+\subsection{Satz und Definition}
+$(M,\leq)$ endliche geordnete Menge.
+\begin{enumerate}
+	
+
+\item $\zeta$ ist bezüglich der Multiplikation in $A(M,\leq)$ invertierbar, d.h. es ex.
+
+$$ \mu \in A(M,\leq) \text{ mit } \zeta * \mu = \mu * \zeta = \delta$$
+
+$\mu$ ist \underline{Möbius-Funktion} zu $(M,\leq)$.
+
+D.h. $a,b \in M: \enspace (\zeta * \mu)(a,b) = \sum_{c\in [a,b]} \underbrace{\zeta(a,c)}_{=1}*\mu(c,b) = \sum_{c \in [a,b]}\mu(c,b) =\begin{cases}
+1& \text{,falls } a=b\\
+0& \text{,sonst}
+\end{cases}$
+
+Ebenso:$ \sum_{c \in [a,b]}\mu(a,c)= \begin{cases}
+1&\text{, falls }a=b\\
+0& \text{, sonst}
+\end{cases}$
+
+
+\item $\mu$ ist rekursiv definiert durch:
+$$\mu(a,a) =1$$
+$$\mu(a,b) = 0 \text{ ,falls } a\nleq b$$
+$$\mu(a,b) = -\sum_{c\in [a,b]}\mu(a,c) \text{,falls } a\prec b \qquad(c\neq b)$$
+
+$\mu(a,b)$ hängt nur von $\leq$ auf $[a,b]$ ab und nicht auf ganz M.
+
+\item Es ist $\mu(a,b) \in \Z$ für alle $a,b \in M$
+
+Falls $a \lessdot b$, so ist $\mu(a,b) = -1$
+
+$\Big(\mu(a,b)=-\mu(a,a)=-1\Big)$
+\end{enumerate}
