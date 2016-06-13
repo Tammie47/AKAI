@@ -1,0 +1,141 @@
+\section{Geordnete Mengen} % 3
+
+\subsection{Definition}
+
+\begin{enumerate}
+	\item $M$ Menge, $\preceq$ Relation auf $M$.
+	
+	$\preceq$ heißt \emph{Ordnungsrelation} (oder partielle Ordnung) $\Leftrightarrow$ 
+	\begin{itemize}
+		\item $a \preceq a$ für alle $a\in M$ (Reflexivität)
+		\item $a \preceq b$ und $b \preceq a \Rightarrow a=b$ (Antisymmetrie)
+		\item $a \preceq b$ und $b \preceq c$ $\Rightarrow a \preceq c$ (Transitivität)
+	\end{itemize}
+	
+	Schreibweise $a \prec b$, falls $a \preceq b $ und $a \neq b$
+	
+	\item
+	$a, b \in M$. 
+	
+	$[a, b] = \aset{c \in M : a \preceq c \text{ und } c \preceq b}$ \emph{Intervall}
+	\\ (Falls $a \npreceq b$, so ist $[a, b] = \emptyset$ wegen der Transitivität von $\preceq$)
+
+	\item
+	$a, b \in M$. 
+	
+	$a$ heißt \emph{Vorgänger} von $b$, $a\lessdot b$, falls $a \prec b$ und $[a, b] = \aset{a, b}$
+	
+	\item
+	 $(M, \preceq)$ heißt \emph{total} oder \emph{vollständig geordnet} (falls $M$ endlich: \emph{Kette}), falls für alle $a, b \in M$ gilt: $a \preceq b$ oder $b \preceq a$ 
+		
+\end{enumerate}
+
+
+\subsection{Beispiel}
+ 
+ \begin{enumerate}
+	 
+	 \item $(\R, \leq)$, $\leq$ normale Kleiner-Gleich-Relation, total geordnet
+	 \\ $(\Z, \leq)$ ebenso. 
+	 
+	 In $(\R, \leq)$ hat kein Element einen Vorgänger! 
+	 \\In $(\Z, \leq)$ hat jedes Element $z$ einen Vorgänger, nämlich $z-1$
+	 
+	 \item $(\N, |)$, $|$ Teilerrelation, partielle Ordnung (nicht vollständig)
+	 
+	 \item $A$ Menge, $\mathcal{P}(A) = \aset{X : X \subseteq A}$, Teilmengenrelation $\subseteq$ ist partielle Ordnung auf $\mathcal{P}(A)$ (nicht total, falls $\abs{A} \geq 2$)
+
+	 \item $M = \aset{0, 1}^n = \underset{\leftarrow n \rightarrow}{\aset{0,1} \times \dots \times \aset{0,1}}$ alle 0,1 - Folgen der Länge $n$.
+	 
+	 \emph{Lexikographische Ordnung} auf $M$: 
+	 \\ $(a_1, \dots, a_n) \leq (b_1, \dots, b_n) \Leftrightarrow (a_1, \dots, a_n) = (b_1, \dots b_n)$
+	 oder es existiert $1 \leq i \leq n$ mit $a_j = b_j$ für alle $j < i$ und $a_i = 0$ und $b_i = 1$ 
+	 
+ \end{enumerate}
+
+Veranschaulichung endlicher partiell geordneter Mengen durch \emph{Hasse-Diagramme}.
+Gerichteter Graph, Knoten = Elemente von $M$, gerichtete Kante zwischen $a$ und $b$ $\Leftrightarrow$ $a\lessdot b$
+
+Lasse Richtungspfeile weg, Richtung ist immer von unten nach oben. 
+
+\subsection{Beispiel} %3.3
+	%TODO Zeichnungen ?
+\begin{enumerate}
+	\item $M = \aset{a, b, c, d, e, f}$
+	
+	$a \lessdot c, d \lessdot f, d \lessdot e$,
+	$a \leq e, a \nleq d$
+	\\ $[a, f] = \emptyset, [b, f] = \aset{b, d, f}$
+	\\ Vorgänger von $e$: $c,d$
+	
+	\item $M = \aset{1, 2, \dots, 6}$, normale Kleiner-Gleich-Relation.
+	
+	\item $M = \aset{1, 2, 3, 4, 6, 12} = \mathbb{T}_{12}$ = Menge aller Teiler von $12$, Teilerrelation
+	
+	\item $A = \aset{1, 2, 3}, M = \mathcal{P}(A), \subseteq$, $\abs{M} = 2^3 = 8$
+	
+\end{enumerate} 
+
+	\subsection{Definition} %3.4
+	
+	$(M, \preceq)$ geordnete Menge.
+	
+	$A(M, \preceq) = \aset{f : M \times N \to \C : f(a, b) = 0 \text{, falls } a \npreceq b}$ 
+	\emph{Inzidenzalgebra} zu $(M, \preceq)$
+	
+	Ist $M$ endlich, so kann man jedes $f \in A(M, \preceq)$ als Matrix schreiben.
+	
+	$M = \aset{a_1, \dots, a_n}$
+	
+	$\begin{array}{c|ccccc}
+			& a_1	& \dots & a_j 	& \dots & a_n \\\hline
+	a_1  	&		&		&\vdots	\\
+	\vdots  &		&		&\vdots \\
+	a_i		&\dots 	& \dots & f(a_i, a_j) \\
+	\vdots  & \\
+	a_n		& \\
+	\end{array}$
+	
+\subsection{Satz} %3.5
+%TODO Thomas part
+
+\subsection{Definition} %3.6
+
+Zeta-Funktion $\zeta \in A(M, \preceq)$  ist definiert durch
+
+$\zeta(a, b) = \begin{cases}
+1 & \text{ falls } a \preceq b \\
+0 & \text{ falls } a \npreceq b
+\end{cases}$
+\\ (beschreibt $\preceq$)
+
+\subsubsection*{Beispiel}
+
+$M = \mathbb{T}_{12}$, $|$
+
+$\zeta \leftrightarrow
+%
+\begin{array}{c|cccccc|}
+	& 1 & 2 & 3 & 4 & 6 & 12 \\\hline
+1	& 1 & 1 & 1 & 1 & 1 & 1 \\
+2 	& 0 & 1 & 0 & 1 & 1 & 1 \\
+3 	& 0 & 0 & 1 & 0 & 1 & 1 \\
+4	& 0 & 0 & 0 & 1 & 0 & 1 \\
+6	& 0 & 0 & 0 & 0 & 1 & 1 \\
+12 	& 0 & 0 & 0 & 0 & 0 & 1
+\end{array}
+%
+$
+
+\subsection{Satz und Definition} % 3.7
+%TODO Thomas
+
+
+
+
+
+
+
+
+
+
