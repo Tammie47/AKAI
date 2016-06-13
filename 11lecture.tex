@@ -1,0 +1,196 @@
+\section{Geordnete Mengen} % 3
+
+\subsection{Definition}
+
+\begin{enumerate}
+	\item $M$ Menge, $\preceq$ Relation auf $M$.
+	
+	$\preceq$ heißt \emph{Ordnungsrelation} (oder partielle Ordnung) $\Leftrightarrow$ 
+	\begin{itemize}
+		\item $a \preceq a$ für alle $a\in M$ (Reflexivität)
+		\item $a \preceq b$ und $b \preceq a \Rightarrow a=b$ (Antisymmetrie)
+		\item $a \preceq b$ und $b \preceq c$ $\Rightarrow a \preceq c$ (Transitivität)
+	\end{itemize}
+	
+	Schreibweise $a \prec b$, falls $a \preceq b $ und $a \neq b$
+	
+	\item
+	$a, b \in M$. 
+	
+	$[a, b] = \aset{c \in M : a \preceq c \text{ und } c \preceq b}$ \emph{Intervall}
+	\\ (Falls $a \npreceq b$, so ist $[a, b] = \emptyset$ wegen der Transitivität von $\preceq$)
+
+	\item
+	$a, b \in M$. 
+	
+	$a$ heißt \emph{Vorgänger} von $b$, $a\lessdot b$, falls $a \prec b$ und $[a, b] = \aset{a, b}$
+	
+	\item
+	 $(M, \preceq)$ heißt \emph{total} oder \emph{vollständig geordnet} (falls $M$ endlich: \emph{Kette}), falls für alle $a, b \in M$ gilt: $a \preceq b$ oder $b \preceq a$ 
+		
+\end{enumerate}
+
+
+\subsection{Beispiel}
+ 
+ \begin{enumerate}
+	 
+	 \item $(\R, \leq)$, $\leq$ normale Kleiner-Gleich-Relation, total geordnet
+	 \\ $(\Z, \leq)$ ebenso. 
+	 
+	 In $(\R, \leq)$ hat kein Element einen Vorgänger! 
+	 \\In $(\Z, \leq)$ hat jedes Element $z$ einen Vorgänger, nämlich $z-1$
+	 
+	 \item $(\N, |)$, $|$ Teilerrelation, partielle Ordnung (nicht vollständig)
+	 
+	 \item $A$ Menge, $\mathcal{P}(A) = \aset{X : X \subseteq A}$, Teilmengenrelation $\subseteq$ ist partielle Ordnung auf $\mathcal{P}(A)$ (nicht total, falls $\abs{A} \geq 2$)
+
+	 \item $M = \aset{0, 1}^n = \underset{\leftarrow n \rightarrow}{\aset{0,1} \times \dots \times \aset{0,1}}$ alle 0,1 - Folgen der Länge $n$.
+	 
+	 \emph{Lexikographische Ordnung} auf $M$: 
+	 \\ $(a_1, \dots, a_n) \leq (b_1, \dots, b_n) \Leftrightarrow (a_1, \dots, a_n) = (b_1, \dots b_n)$
+	 oder es existiert $1 \leq i \leq n$ mit $a_j = b_j$ für alle $j < i$ und $a_i = 0$ und $b_i = 1$ 
+	 
+ \end{enumerate}
+
+Veranschaulichung endlicher partiell geordneter Mengen durch \emph{Hasse-Diagramme}.
+Gerichteter Graph, Knoten = Elemente von $M$, gerichtete Kante zwischen $a$ und $b$ $\Leftrightarrow$ $a\lessdot b$
+
+Lasse Richtungspfeile weg, Richtung ist immer von unten nach oben. 
+
+\subsection{Beispiel} %3.3
+	%TODO Zeichnungen ?
+\begin{enumerate}
+	\item $M = \aset{a, b, c, d, e, f}$
+	
+	$a \lessdot c, d \lessdot f, d \lessdot e$,
+	$a \leq e, a \nleq d$
+	\\ $[a, f] = \emptyset, [b, f] = \aset{b, d, f}$
+	\\ Vorgänger von $e$: $c,d$
+	
+	\item $M = \aset{1, 2, \dots, 6}$, normale Kleiner-Gleich-Relation.
+	
+	\item $M = \aset{1, 2, 3, 4, 6, 12} = \mathbb{T}_{12}$ = Menge aller Teiler von $12$, Teilerrelation
+	
+	\item $A = \aset{1, 2, 3}, M = \mathcal{P}(A), \subseteq$, $\abs{M} = 2^3 = 8$
+	
+\end{enumerate} 
+
+	\subsection{Definition} %3.4
+	
+	$(M, \preceq)$ geordnete Menge.
+	
+	$A(M, \preceq) = \aset{f : M \times N \to \C : f(a, b) = 0 \text{, falls } a \npreceq b}$ 
+	\emph{Inzidenzalgebra} zu $(M, \preceq)$
+	
+	Ist $M$ endlich, so kann man jedes $f \in A(M, \preceq)$ als Matrix schreiben.
+	
+	$M = \aset{a_1, \dots, a_n}$
+	
+	$\begin{array}{c|ccccc}
+			& a_1	& \dots & a_j 	& \dots & a_n \\\hline
+	a_1  	&		&		&\vdots	\\
+	\vdots  &		&		&\vdots \\
+	a_i		&\dots 	& \dots & f(a_i, a_j) \\
+	\vdots  & \\
+	a_n		& \\
+	\end{array}$
+
+\subsection{Satz}
+$A(M,\leq)$ ist abgeschlossen bzgl. Addition und Multiplikation von Funktionen die wie folgt definiert sind:
+
+$ f,g\in A(M,\leq)$
+
+$a,b \in M$:
+
+$(f+g)(a,b):= f(a,b)+g(a,b) \in \mathbb{C} \qquad ,f+g \in A(M,\leq)$
+
+$(f*g)(a,b):= \sum_{c\in \mathbb{C}}f(a,b)*g(c,d) $\qquad (Faltungsprodukt)
+
+Ang. $ \nleq b$ Dann gilt für jedes $c \in M. a \nleq c$ oder $c\nleq b$ (Transitivität)
+
+$(f*g)(a,b)=0$, d.h. $f,g\in A(M,\leq)f(a,c)=0 $ der $g(c,d)=0$
+
+$(f*g)(a,b) = \sum_{c\in [a,b]}f(a,c)*g(c,b) \qquad(a \nleq b \Rightarrow [a,b] = \emptyset,$ leere Summe =0)
+
+Multiplikation entspricht der Matrixmultiplikation.
+
+Neutrales Element bzgl. Multiplikation: $\delta \in A(M,\leq)$
+
+$\delta(a,b)=\begin{cases}
+0 & a\neq b\\
+1 & a=b
+\end{cases}$ \qquad $\begin{pmatrix}
+1 & & & & 0\\
+&. & & & \\
+& &. & & \\
+& & &. & \\
+0 & & & &1 \\
+\end{pmatrix}
+$
+
+
+\subsection{Definition} %3.6
+
+Zeta-Funktion $\zeta \in A(M, \preceq)$  ist definiert durch
+
+$\zeta(a, b) = \begin{cases}
+1 & \text{ falls } a \preceq b \\
+0 & \text{ falls } a \npreceq b
+\end{cases}$
+\\ (beschreibt $\preceq$)
+
+\subsubsection*{Beispiel}
+
+$M = \mathbb{T}_{12}$, $|$
+
+$\zeta \leftrightarrow
+%
+\begin{array}{c|cccccc|}
+& 1 & 2 & 3 & 4 & 6 & 12 \\\hline
+1	& 1 & 1 & 1 & 1 & 1 & 1 \\
+2 	& 0 & 1 & 0 & 1 & 1 & 1 \\
+3 	& 0 & 0 & 1 & 0 & 1 & 1 \\
+4	& 0 & 0 & 0 & 1 & 0 & 1 \\
+6	& 0 & 0 & 0 & 0 & 1 & 1 \\
+12 	& 0 & 0 & 0 & 0 & 0 & 1
+\end{array}
+%
+$
+
+
+\subsection{Satz und Definition}
+$(M,\leq)$ endliche geordnete Menge.
+\begin{enumerate}
+	
+	
+	\item $\zeta$ ist bezüglich der Multiplikation in $A(M,\leq)$ invertierbar, d.h. es ex.
+	
+	$$ \mu \in A(M,\leq) \text{ mit } \zeta * \mu = \mu * \zeta = \delta$$
+	
+	$\mu$ ist \underline{Möbius-Funktion} zu $(M,\leq)$.
+	
+	D.h. $a,b \in M: \enspace (\zeta * \mu)(a,b) = \sum_{c\in [a,b]} \underbrace{\zeta(a,c)}_{=1}*\mu(c,b) = \sum_{c \in [a,b]}\mu(c,b) =\begin{cases}
+	1& \text{,falls } a=b\\
+	0& \text{,sonst}
+	\end{cases}$
+	
+	Ebenso:$ \sum_{c \in [a,b]}\mu(a,c)= \begin{cases}
+	1&\text{, falls }a=b\\
+	0& \text{, sonst}
+	\end{cases}$
+	
+	
+	\item $\mu$ ist rekursiv definiert durch:
+	$$\mu(a,a) =1$$
+	$$\mu(a,b) = 0 \text{ ,falls } a\nleq b$$
+	$$\mu(a,b) = -\sum_{c\in [a,b]}\mu(a,c) \text{,falls } a\prec b \qquad(c\neq b)$$
+	
+	$\mu(a,b)$ hängt nur von $\leq$ auf $[a,b]$ ab und nicht auf ganz M.
+	
+	\item Es ist $\mu(a,b) \in \Z$ für alle $a,b \in M$
+	
+	Falls $a \lessdot b$, so ist $\mu(a,b) = -1$
+	
+	$\Big(\mu(a,b)=-\mu(a,a)=-1\Big)$
+\end{enumerate}
