@@ -91,60 +91,66 @@
 	
 	In der Zahlentheorie : 
 	$\mu(m) := \mu(1, m) = \mu(a, b)$ falls $a\mid b, \frac{b}{a} = m$
+			
+			
+\end{enumerate}
 	
-	\subsection{Satz (Möbiusinversion)}  %3.9
-	%TODO THomas part
+	\subsection{Satz(Möbiusinversion)}
+	$(M,\leq)$ geordnete Menge, $f: M\rightarrow \C$ beliebige Funktion.
 	
-	\subsection{Beispiel} %3.10
+	\begin{enumerate}
+		\item 	$g:M \rightarrow \C$ sei definiert durch $g(x) = \sum_{\underset{y\leq x}{y \in M} } f(y)$
+		
+		Dann ist $f(x) = \sum_{\underset{y\leq x}{y \in M}}	g(y) * \mu (y,x)$ für alle $x \in M$
+		
+		\item 	$h: M \rightarrow \C$ sei definiert durch $h(x)= \sum_{\underset{y\leq x}{y \in M}}f(y)$ Dann: 	$f(x)= \sum_{\underset{y\leq x}{y \in M}} h(y)*\mu (x,y)$ für alle $x \in M$ 
+		
+	\end{enumerate}
 	
-	Zur Lösung einer Aufgabe seien die Lösungen von Teilaufgaben erforderlich, für deren Lösung wieder die Lösungen gewisser Teilaufgaben etc.
+	\subsubsection*{Beweis}
+	\begin{enumerate}
+		\item Sei $x \in M$.
+		
+		$\sum_{\underset{y\leq x}{y \in M}} g(y) \mu (y,x) = \sum_{\underset{y\leq x}{y \in M}}(\sum_{\underset{z\leq y}{z \in M}}f(z))\mu (y,x) = \sum_{\underset{y\leq x}{y \in M}}\sum_{\underset{z\leq y}{z \in M}} f(z) * \mu(y,x) $
+		
+		$\overset{(\star)}{=} \sum_{\underset{y\leq x}{y \in M}} \sum_{z \in M} f(z) * \zeta (z,y) * \mu (y,x) = \sum_{z \in M}f(z) \sum_{\underset{y\leq x}{y \in M}} \zeta (z,y)*\mu(y,x)$
+		
+		$= \sum_{z\in M} f(z)*\delta(z,x)=f(x)$
+		
+		$(\star): \zeta(z,y) = 1, \qquad z \leq y$
+		
+		$\qquad \zeta(z,y) = 0, \qquad z \nleq 0$
+		\item analog
+	\end{enumerate}
 	
-	Das führt zu partieller Ordnung auf der Menge aller (Teil-) Aufgaben $t_1, \dots, t_n$
-	\\ $t_i \preceq t_j \Leftrightarrow$ Lösung von $t_i$ ist zur Lösung von $t_j$ erforderlich.
-	
-	Z.B. folgendes zugehörige Hasse-Diagramm.
-	%TODO Diagramm??
-	
-	[...]
-	
-	Bekannt sei die Zeit $g(t_i)$ zur Lösung von $t_i$ (einschließlich der Zeiten für die dazu benötigten Teilaufgaben).
-	
-	Wie groß ist die ''reine'' Zeit $f(t_i)$ zur Lösung von $t_i$ ohne die Zeiten für die Teilaufgaben?
-	
-	$f(t_6) = ?$
-	
-	3.9 %TODO ref
-	$f(t_6) = g(t_6)\mu(t_6, t_6)
+		\subsection{Beispiel} %3.10
+		
+		Zur Lösung einer Aufgabe seien die Lösungen von Teilaufgaben erforderlich, für deren Lösung wieder die Lösungen gewisser Teilaufgaben etc.
+		
+		Das führt zu partieller Ordnung auf der Menge aller (Teil-) Aufgaben $t_1, \dots, t_n$
+		\\ $t_i \preceq t_j \Leftrightarrow$ Lösung von $t_i$ ist zur Lösung von $t_j$ erforderlich.
+		
+		Z.B. folgendes zugehörige Hasse-Diagramm.
+		%TODO Diagramm??
+		
+		[...]
+		
+		Bekannt sei die Zeit $g(t_i)$ zur Lösung von $t_i$ (einschließlich der Zeiten für die dazu benötigten Teilaufgaben).
+		
+		Wie groß ist die ''reine'' Zeit $f(t_i)$ zur Lösung von $t_i$ ohne die Zeiten für die Teilaufgaben?
+		
+		$f(t_6) = ?$
+		
+		3.9 %TODO ref
+		$f(t_6) = g(t_6)\mu(t_6, t_6)
 		+ g(t_4)\mu(t_4, t_6) 
 		+ g(t_3)\mu(t_3, t_6)
 		+ g(t_2)\mu(t_2, t_6)
 		+ g(t_1)\mu(t_1, t_6) $
 		
-	$\mu(t_2, t_6) = \mu(t_3, t_6) = \mu(t_4, t_6) = -1$ (3.7c) %TODO ref
-	\\$\mu(t_1, t_6) = -\mu(t_1, t_1) - \mu(t_1, t_2) - \mu(t_1, t_3) - \mu(t_1, t_4) = -1 + 1 + 1 +1 = 2$
-	
-	$f(t_6) = 22 \cdot 1 - 11 \cdot 1 - 9 \cdot 1 - 10 \cdot 1 + 6 \cdot 2 = 4$	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		$\mu(t_2, t_6) = \mu(t_3, t_6) = \mu(t_4, t_6) = -1$ (3.7c) %TODO ref
+		\\$\mu(t_1, t_6) = -\mu(t_1, t_1) - \mu(t_1, t_2) - \mu(t_1, t_3) - \mu(t_1, t_4) = -1 + 1 + 1 +1 = 2$
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		$f(t_6) = 22 \cdot 1 - 11 \cdot 1 - 9 \cdot 1 - 10 \cdot 1 + 6 \cdot 2 = 4$	
 		
 		

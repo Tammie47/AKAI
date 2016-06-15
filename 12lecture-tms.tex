@@ -1,0 +1,30 @@
+\subsection{Feli}
+\subsection{Satz(Möbiusinversion)}
+$(M,\leq)$ geordnete Menge, $f: M\rightarrow \C$ beliebige Funktion.
+
+\begin{enumerate}
+	\item 	$g:M \rightarrow \C$ sei definiert durch $g(x) = \sum_{\underset{y\leq x}{y \in M} } f(y)$
+	
+			Dann ist $f(x) = \sum_{\underset{y\leq x}{y \in M}}	g(y) * \mu (y,x)$ für alle $x \in M$
+			
+	\item 	$h: M \rightarrow \C$ sei definiert durch $h(x)= \sum_{\underset{y\leq x}{y \in M}}f(y)$ Dann: 	$f(x)= \sum_{\underset{y\leq x}{y \in M}} h(y)*\mu (x,y)$ für alle $x \in M$ 
+	
+\end{enumerate}
+
+\subsubsection*{Beweis}
+\begin{enumerate}
+	\item Sei $x \in M$.
+	
+	$\sum_{\underset{y\leq x}{y \in M}} g(y) \mu (y,x) = \sum_{\underset{y\leq x}{y \in M}}(\sum_{\underset{z\leq y}{z \in M}}f(z))\mu (y,x) = \sum_{\underset{y\leq x}{y \in M}}\sum_{\underset{z\leq y}{z \in M}} f(z) * \mu(y,x) $
+	
+	$\overset{(\star)}{=} \sum_{\underset{y\leq x}{y \in M}} \sum_{z \in M} f(z) * \zeta (z,y) * \mu (y,x) = \sum_{z \in M}f(z) \sum_{\underset{y\leq x}{y \in M}} \zeta (z,y)*\mu(y,x)$
+	
+	$= \sum_{z\in M} f(z)*\delta(z,x)=f(x)$
+	
+	$(\star): \zeta(z,y) = 1, \qquad z \leq y$
+	
+	$\qquad \zeta(z,y) = 0, \qquad z \nleq 0$
+	\item analog
+\end{enumerate}
+
+\subsection{Bsp. Feli}
