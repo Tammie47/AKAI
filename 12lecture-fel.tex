@@ -1,0 +1,153 @@
+\subsection{Beispiele} %3.8
+
+\begin{enumerate}
+	\item 
+	$M$ total geordnet. $a_1 < a_2 < \dots < a_n$
+	
+	$\zeta \leftrightarrow
+	\begin{array}{c|cccc|}
+	a_1 	& 1 & 1 & \dots & 1 \\
+	\vdots  &	& 1 & \dots & 1 \\
+	\vdots  & 	& 0 & \ddots & \\
+	a_n		&   &	&		& 1 \\ %TODO hier | unterbrechen
+			& a_1 & \dots &\dots & a_n
+	\end{array}$
+	
+	$\mu(a, b) = \begin{cases}
+	1 & \text{falls } a = b  \\
+	-1 & \text{falls } a \lessdot b \\
+	0 & \text{sonst}
+	\end{cases}$
+	
+	$\mu \leftrightarrow
+	\begin{array}{c|cccc|}
+		a_1 	& 1 & -1 &  & 0 \\
+		\vdots  &	& \ddots & \ddots &  \\
+		\vdots  & 	& 0 & \ddots & -1\\
+		a_n		&   &	&		& 1 \\ %TODO hier | unterbrechen
+				& a_1 & \dots &\dots & a_n
+		\end{array}$
+		
+	Nach 3.7 %TODO ref
+	ist zu zeigen: $\mu(a, b) = 0$, falls $a \neq b$, $a$ kein Vorgänger von $b$.
+	
+	$a, b, a \neq b$. $M$ total geordnet: $a < b$ oder $b < a$.
+	
+	Falls $b < a$, so ist $ a \nleq b$, also $\mu(a, b) = 0$.
+	
+	Sei $a < b$. $a = b_0 \lessdot b_1 \lessdot \dots \lessdot b_{m-1} < b_m = b, m \geq 2$
+	
+	$\mu(a, b) \stackrel{3.7}{=} %TODO ref
+	- \sum_{i=0}^{m-1}\mu(a, b_i) 
+	= - \mu(a, b_{m-1}) . \sum_{i=0}^{m-2}\mu(a, b_i)
+	\stackrel{3.7}{=} %TODO ref
+	- \mu(a, b_{m-1}) + \mu(a, b_{m-1})	= 0$
+	
+	
+	\item
+	
+	$M = (\mathbb{T}_{20}, |)$,
+	$\mathbb{T}_{20} = \aset{n \in \N : n | 20} = \aset{1, 2, 4, 5, 10, 20}$
+	
+	$\zeta \leftrightarrow
+	\begin{pmatrix}
+	1 & 1 & 1 & 1 & 1 & 1 \\
+	0 & 1 & 1 & 0 & 1 & 1 \\
+	0 & 0 & 1 & 0 & 0 & 1 \\
+	0 & 0 & 0 & 1 & 1 & 1 \\
+	0 & 0 & 0 & 0 & 1 & 1 \\
+	0 & 0 & 0 & 0 & 0 & 1
+	\end{pmatrix}$
+	
+	Berechnung von $\mu$:
+	
+	$\mu(a, b) = 0$, falls $a\nmid b$ 
+	\\$\mu(a, a) = 1$ für alle $a \in \mathbb{T}_{20}$
+	\\$\mu(1, 2) = \mu(2, 10) = \mu(5, 10) = \mu(2, 4) = \mu(10, 20) = \mu(4, 20) = -1$
+	\\$\mu(1, 4) = \mu(5, 20) = 0$, da $[1, 4], [5, 20]$ Ketten, dann a).
+	\\ $\mu(1, 10) \stackrel{3.7}{=} %TODO ref
+	-\mu(1, 2) - \mu(1, 2) - \mu(1, 5) = - 1 + 1 + 1 = 1$
+	\\ Analog $\mu(2, 20) = 1$
+	\\ $\mu(1, 20) \stackrel{3.7}{=} %TODO ref
+	-\mu(1, 1) - \mu(1, 2) - \mu(1, 4) - \mu(1,5) - \mu(1, 10) = -1 + 1 -0 +1 -1 = 0$
+	
+	
+	$\mu \leftrightarrow
+		\begin{pmatrix}
+		1 & -1 & 0 & -1 & 1 & 0 \\
+		0 & 1 & -1 & 0 & -1 & 1 \\
+		0 & 0 & 1 & 0 & 0 & -1 \\
+		0 & 0 & 0 & 1 & 1 & 1 \\
+		0 & 0 & 0 & 1 & -1 & 0 \\
+		0 & 0 & 0 & 0 & 0 & 1
+		\end{pmatrix}$
+	
+	
+	Allgemein gilt für $(\mathbb{T}_n, I)$, so 
+	$\mu(a, b) = \begin{cases}
+	(-1)^r & \text{, falls } a \mid b \text{ und } \frac{b}{a} \text{ Produkt von } r \text{ verschiedenen Primzahlen.} \\
+	0 & sonst 
+	\end{cases}$
+	
+	In der Zahlentheorie : 
+	$\mu(m) := \mu(1, m) = \mu(a, b)$ falls $a\mid b, \frac{b}{a} = m$
+	
+	\subsection{Satz (Möbiusinversion)}  %3.9
+	%TODO THomas part
+	
+	\subsection{Beispiel} %3.10
+	
+	Zur Lösung einer Aufgabe seien die Lösungen von Teilaufgaben erforderlich, für deren Lösung wieder die Lösungen gewisser Teilaufgaben etc.
+	
+	Das führt zu partieller Ordnung auf der Menge aller (Teil-) Aufgaben $t_1, \dots, t_n$
+	\\ $t_i \preceq t_j \Leftrightarrow$ Lösung von $t_i$ ist zur Lösung von $t_j$ erforderlich.
+	
+	Z.B. folgendes zugehörige Hasse-Diagramm.
+	%TODO Diagramm??
+	
+	[...]
+	
+	Bekannt sei die Zeit $g(t_i)$ zur Lösung von $t_i$ (einschließlich der Zeiten für die dazu benötigten Teilaufgaben).
+	
+	Wie groß ist die ''reine'' Zeit $f(t_i)$ zur Lösung von $t_i$ ohne die Zeiten für die Teilaufgaben?
+	
+	$f(t_6) = ?$
+	
+	3.9 %TODO ref
+	$f(t_6) = g(t_6)\mu(t_6, t_6)
+		+ g(t_4)\mu(t_4, t_6) 
+		+ g(t_3)\mu(t_3, t_6)
+		+ g(t_2)\mu(t_2, t_6)
+		+ g(t_1)\mu(t_1, t_6) $
+		
+	$\mu(t_2, t_6) = \mu(t_3, t_6) = \mu(t_4, t_6) = -1$ (3.7c) %TODO ref
+	\\$\mu(t_1, t_6) = -\mu(t_1, t_1) - \mu(t_1, t_2) - \mu(t_1, t_3) - \mu(t_1, t_4) = -1 + 1 + 1 +1 = 2$
+	
+	$f(t_6) = 22 \cdot 1 - 11 \cdot 1 - 9 \cdot 1 - 10 \cdot 1 + 6 \cdot 2 = 4$	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+\end{enumerate}
