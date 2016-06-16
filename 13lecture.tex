@@ -1,0 +1,69 @@
+\subsection{Definition} %3.11
+
+Sei $(M, \preceq)$ geordnete Menge.
+
+\begin{enumerate}
+	\item $K \subseteq M$ heißt \emph{Kette}, wenn $(K, \preceq)$ total geordnet ist.
+	
+	\item $K \subseteq M$ heißt \emph{Antikette}, falls für alle $a, a' \in A, a \neq a'$ gilt:
+	$ a \npreceq a'$ und $a' \npreceq a$ 
+	
+\end{enumerate}
+
+\subsubsection*{Beispiel}
+
+$(M, \preceq)$
+%TODO zeichnen? 
+
+[...]
+
+$\aset{a, b, c, g, i}$ Kette, auch $\aset{a, d, i}$
+
+$\aset{f, g, j}$ Antikette
+
+\subsection{Bemerkung} %3.12
+
+%TODO Thomas part 
+
+\subsection{Satz} %3.13
+
+$(M, \preceq)$ endliche geordnete Menge. Hat die größte Kette von $M$ Größe $k$, so kann $M$ mit $k$ Antiketten überdeckt werden (und nicht mit weniger (3.12b)) %TODO ref
+
+\subsubsection*{Beweis}
+
+Sei $x \in M$. Definiere Höhe $h(x)$ von $x$ als Maximalanzahl der Elemente $\neq x$ einer Kette, in der $x$ das größte Element ist. 
+
+D.h. $h(x) = 0 \Leftrightarrow x$ hat keinen Vorgänger.
+
+$A_i = \aset{x \in M : h(x) = i}$ Also $A_i = \emptyset$, falls $i \geq k$, da $k$ maximale Kettenlänge.
+
+Daher $M = A_0 \cup \dots \cup A_{k-1}$, denn jedes Element hat Höhe.
+
+Jedes $A_i$ ist Antikette : Angenommen nicht. Dann existieren $x, y \in A_i, x \neq y, x \prec y$
+
+$h(x) = i$. Es existiert Kette $K$ mit $i+1$ Elementen, $x$ ist das Größte. $K \cup \aset{y}$ ist Kette mit $i+2$ Elementen, $y$ ist das größte Elemente, also $h(y) \geq i+1$, $\lightning$ zu $y \in A_i$
+
+\subsection{Satz von Dilworth} %3.14
+%TODO Thomas part
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
