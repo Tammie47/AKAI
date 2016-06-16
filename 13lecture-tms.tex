@@ -1,0 +1,84 @@
+\subsection{Definition - Feli}
+\subsection{Bemerkung}
+\begin{enumerate}
+	\item \textit{K} Kette und \textit{A} Antikette, in $(M ,\preceq )$, somit $\abs{A \cap K} \leq 1$
+	
+	$(a\neq b,a,b \in A \cap K \text{, dann} a \npreceq b\text{ und } b \npreceq a, \text{ da } a,b \in A)$
+	
+	$(a\neq b,a,b \in A \cap K \text{ und } a \preceq b\text{ oder } b \preceq a, \text{ da } a,b \in K \lightning)$
+	
+	\item Hat \textit{M} eine Kette \textit{K} $\abs{K}=k$, so kann \textit{M} nicht mit weniger als \textit{k} Antiketten überdeckt werden.
+	
+	(Überdeckung:$ M=\underset{i \in I}{\bigcup} M_i$ \textit{M} ist Überdeckung der $M_i$
+	
+	$M= \bigcup A_i, A_i$ Antiketten. O.B.d.A. Vereinigung \underline{disjunkt}, d.h. $A_i \cap A_j = \emptyset$)
+	
+	\subsubsection*{Beweis:}
+	$M=\bigcup A_i, \abs{A_i \cap K}\leq 1 \Rightarrow $ Anzahl der $A_i \geq k$.
+	
+	\item Ist \textit{A} Antikettem $\abs{A} = l$, so kann \textit{M} nicht mit weniger als \textit{l} ketten überdeckt werden.
+	
+	\subsubsection*{Beispiel von zuvor:}
+	
+	$K= \{a,b,c,g,j\} \underset{3.12 b)}{\Rightarrow} M$ kann nicht mit weniger als 5 Antiketten überdeckt werden
+	
+	$\{a\}, \{b\}, \{c,d,e\}, \{f,g,h\},\{i,j\}$ \textit{M} ist Vereiinigung dieser 5 Antiketten
+	
+	$A=\{f,g,j\}$ Antikette $ \underset{3.12 c)}{\Rightarrow} M$ kann nicht mit weniger als 3 Ketten überdeckt werden.
+	
+	$\{c,f\},\{a,b,d,g,i\},\{e,h,j\}$\textit{M} ist Vereinigung dieser 3 Ketten.
+	
+	$\rightarrow $ Maximale Kettenlänge = 5 = Minimalle Anzahl von Antiketten, die zur Überdeckung von M benötigt werden
+	
+	$\rightarrow$ Maximale Größe von Antikette = 3 = Minimale Anzahl von Ketten, die zur Überdeckung von M benötigt werden
+\end{enumerate}
+
+\subsection{Satz - Feli}
+
+\subsection{Satz von Dilworth (*1950)}
+
+$(M, \preceq)$ endliche geordnete Menge. Hat die größte Antikette von \textit{M} Größe \textit{l}, so lässt sich \textit{M} von \textit{l} Ketten überdecken $\underset{3.12 c)}{ \text{(und nicht mit weniger)}}$
+
+\subsubsection*{Beweis (Tverberg,1967)}
+
+Induktion nach $\abs{M}$. Sei $K$ eine maximale Kette in $M$
+
+
+Gibt es in $M \setminus K$ keine Antikette der Länge $l$, so ist die Länge der größten Antikette in $M \setminus K$ gerade $l-1$ $\abs{M \setminus K} < \abs{M}$. Per Induktion lässt sich $M \setminus K$ durch $l-1$ Ketten $K_1,...,K_{l-1}$ überschneiden. $M = K_1\cup...\cup K_{l-1} \cup K$, Überdeckung von $M$ durch $l$ Ketten.
+
+Also bleibt der Fall, dass es in $M\setminus K$ Antikette $\{a_1,...,a_l\}$ der Größe $l$ gibt.
+
+Definiere:
+
+$M^- = \{ z \in M: \exists i: z \preceq a_i \} \subseteq \{a_1,...a_l\}$
+
+$M^+ = \{ z \in M: \exists i: z \succeq a_i \} \subseteq \{a_1,...a_l\}$
+
+Es gilt: $ M = M^- \cup M^+$:
+
+Denn angenommen es ex. $a\in M$ mit $a \notin M^-\cup M^+$
+
+$a \notin M^-: a\leq a_i$ für alle i
+
+$a \notin M^+: a\geq a_i$ für alle i
+
+D.h. $\{a_1,...,a_l,a\}$ Antikette der Größe l+1 $\lightning$
+
+Da \textit{K} maximale Kette ist, liegt das görßte Element von \textit{K} nicht in $M^-$:
+
+Sei $v$ das größte Element von $K$. Angenommen $v \in M^-$. Dann ex. ein $i$ mit $v \leq a_i$. Dann $v< a_i$, denn $a_i \notin K$. Dann ist $K \cup \{v\}$ Kette von um 1 größerer Länge als \textit{K} zur Wahl von K $\lightning$
+
+Also: $v \notin M^-$
+
+Dann $\abs{M^-} < \abs{M}. ~ M^-$ enthält Antikette der Größe \textit{l}, nämlich $\{a_1,...,a_l\}$
+
+Per Induktion: $M^- = K_1^- \cup ... \cup K_l^-,~ K_i^-$ Ketten, O.B.d.A. $a_i \in K_i^-$
+
+$a_i$ ist das größte Element in $K_i^-:$ Ang. es ex. $k \in K_i^-$ mit $k \prec a_i. k \in M$, also ex. $j$ mit $k \leq a_j$. Transitivität von $\leq: a_i < a_j \lightning$, da $\{
+a_1,...,a_l\}$ Antikette.
+
+Jetzt macht man das Gleiche , nur dual, mit $M^+$. DAnn:
+
+$M^+ = K_1^+ \cup ... \cup K_l^+, ~ K_i^+$ Ketten, $a_i \in K_i^+, a_i$ ist das kleinste Element in $K_i^+$
+ 
+Setze $K_i = K_i^- \cup K_i^+, i=1,...,l~~ M= K_1 \cup...\cup K_l,~~ K_i$ Ketten
