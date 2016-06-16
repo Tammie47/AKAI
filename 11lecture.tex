@@ -80,7 +80,7 @@ Lasse Richtungspfeile weg, Richtung ist immer von unten nach oben.
 	
 	$(M, \preceq)$ geordnete Menge.
 	
-	$A(M, \preceq) = \aset{f : M \times N \to \C : f(a, b) = 0 \text{, falls } a \npreceq b}$ 
+	$A(M, \preceq) = \aset{f : M \times M \to \C : f(a, b) = 0 \text{, falls } a \npreceq b}$ 
 	\emph{Inzidenzalgebra} zu $(M, \preceq)$
 	
 	Ist $M$ endlich, so kann man jedes $f \in A(M, \preceq)$ als Matrix schreiben.
@@ -105,11 +105,11 @@ $a,b \in M$:
 
 $(f+g)(a,b):= f(a,b)+g(a,b) \in \mathbb{C} \qquad ,f+g \in A(M,\leq)$
 
-$(f*g)(a,b):= \sum_{c\in \mathbb{C}}f(a,b)*g(c,d) $\qquad (Faltungsprodukt)
+$(f*g)(a,b):= \sum_{c\in M}f(a,c)\cdot g(c,b) $\qquad (Faltungsprodukt)
 
-Ang. $ \nleq b$ Dann gilt für jedes $c \in M. a \nleq c$ oder $c\nleq b$ (Transitivität)
+Ang. $a \nleq b$ Dann gilt für jedes $c \in M. a \nleq c$ oder $c\nleq b$ (Transitivität)
 
-$(f*g)(a,b)=0$, d.h. $f,g\in A(M,\leq)f(a,c)=0 $ der $g(c,d)=0$
+$(f*g)(a,b)=0$, d.h. $f,g\in A(M,\leq)f(a,c)=0 $ oder $g(c,b)=0$
 
 $(f*g)(a,b) = \sum_{c\in [a,b]}f(a,c)*g(c,b) \qquad(a \nleq b \Rightarrow [a,b] = \emptyset,$ leere Summe =0)
 
