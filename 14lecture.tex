@@ -1,0 +1,88 @@
+\subsection{Definition} % 3.15
+
+Sei $G = (E,K)$, $E$ Eckenmenge, $K$ Kantenmenge
+
+($G$ einfacher Graph, d.h. keine Mehrfachkanten, keine Schleifen)
+
+Jede Kante kann mit 2-elementiger Teilmenge von $E$ identifiziert werden.
+
+\begin{enumerate}
+	\item $G$ heißt \emph{bipartit}, falls es eine Zerlegung $E=S\: \dot{\cup}\; T$, $S, T$ disjunkt gibt, so dass jede Kante einen Endpunkt in $S$ und einen in $T$ hat.
+	
+	\item
+	$V \subseteq E$ heißt \emph{vertex cover} (überdeckende Eckenmenge), falls jede Kante mindestens einen Endpunkt in $V$ hat.
+	
+	\item
+	Ein \emph{Matching} ist Teilmenge $L \subseteq K$, so dass keine 2 Kanten in $L$ einen Endpunkt gemeinsam haben.
+	
+\end{enumerate}
+
+\subsubsection*{Beispiel}
+
+[...]
+
+\underline{Klar:} Ist $m$ die Größe eines Matchings, $c$ die Größe eines vertex covers, so $m \leq c$
+\\(Von jeder Kante des matchings mindestens ein Endknoten )
+
+\subsection{Satz von König (1916)} %3.16
+ %TODO Thomas
+
+
+\subsection{Bemerkung}
+
+3.13 \ 3.14 \ 3.16 Beispiele von Max-Min-Sätzen %TODO ref
+
+Maximierung einer Größe ist äquivalent zu Minimierung einer anderen Größe.
+
+Weiteres Beispiel : Max-Flow Min-Cut-Theorem.
+
+Netzwerk : Gerichteter Graph (Kanten hoher Orientierung)
+und jede Kante $k$ hat Gewicht $c(k) \geq 0, c(k \in \R$
+($c(k) = $ Kapazität von $k$). 
+Es gibt zwei ausgezeichnete Ecken $A$ und $Z$ ($A$ Anfangsknoten, $Z$ Zielknoten), bei $A$ gibt es nur ausgehende Kanten, bei $Z$ gibt es nur eingehende Kanten.
+
+[...]
+
+Ein \emph{Fluss} in einem Netzwerk ist Funktion $f$, die jeder Kante $k$ ein $f(k) \in \R$ zuordnet mit :
+
+\begin{enumerate}
+	\item
+	$0 \leq f(k) \leq c(k)$ für alle $k$.
+	
+	
+	\item 
+	Für jeden Knoten $X$, $X \neq A, Z$, gilt:
+	
+	$\sum_{*_1}f(k) = \sum_{*_2}f(k')$
+	\\ ($(*_1): k$ eingehende Kante bei $X$, $(*_2): k'$ ausgehende Kante bei $X$)
+	
+\end{enumerate}
+
+Wert eines Flusses $f$ :
+$\abs{f} = \sum_{*3}f(k)$
+\\$((*_3): k$ ausgehende Kanten von $A$)
+
+Ein \emph{Schnitt} $S$ ist eine Menge von Kanten, so dass jeder Weg von $A$ nach $Z$ mindestens eine Kante aus $S$ beinhaltet.
+Kapazität von $S := \sum_{k \in S} c(k)$
+
+\subsection*{Max-Flow Min-Cut-Theorem (Ford, Fulkerson)}
+
+Max. Wert eines Flusses = Minimale Kapazität eines Schnittes.
+
+(Beweis z.B. van Lint, Wilson, A Course in Combinatorics, Th. 7.1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
